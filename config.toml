@@ -1,8 +1,35 @@
-baseURL = "http://example.org/"
+baseURL = "http://abogsnes.com"
 languageCode = "en-us"
 title = "Homepage"
-theme = ["ananke", "reveal-hugo"]
+theme = ["hugo-theme-codex", "reveal-hugo"]
 enableEmoji = true
+
+
+# Controls the navigation
+[[menu.main]]
+  identifier = "about"
+  name = "about"
+  title = "About"
+  url = "/"
+
+[[menu.main]]
+  identifier = "blog"
+  name = "blog"
+  title = "Blog"
+  url = "/blog"
+
+[[menu.main]]
+ identifier = "presentations"
+ name = "presentations"
+ title = "Presentations"
+ url = "/presentations/"
+
+[params]
+github = "https://github.com/andersbogsnes"
+twitter = "https://twitter.com/andersbogsnes"
+linkedin = "https://www.linkedin.com/in/andersbogsnes/"
+
+iconOrder = ["GitHub", "Linkedin", "Twitter"]
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -12,14 +39,6 @@ baseName = "index"
 mediatype = "text/html"
 isHTML = true
 
-[params]
- featured_image = "/images/python_code.jpg"
-
- [params.reveal_hugo]
- transition_speed = 'fast'
- theme="moon"
-
- [[menu.main]]
-    name = "Presentations"
-    identifier="presentations"
-    url="/presentations/"
+[params.reveal_hugo]
+transition_speed = 'fast'
+theme="moon"
