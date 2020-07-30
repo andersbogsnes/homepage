@@ -1,0 +1,20 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Homepage"
+theme = ["ananke", "reveal-hugo"]
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[outputFormats.Reveal]
+baseName = "index"
+mediatype = "text/html"
+isHTML = true
+
+[params]
+ featured_image = "/images/python_code.jpg"
+
+ [[menu.main]]
+    name = "Presentations"
+    identifier="presentations"
+    url="/presentations/"
