@@ -2,6 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Homepage"
 theme = ["ananke", "reveal-hugo"]
+enableEmoji = true
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -13,6 +14,10 @@ isHTML = true
 
 [params]
  featured_image = "/images/python_code.jpg"
+
+ [params.reveal_hugo]
+ transition_speed = 'fast'
+ theme="moon"
 
  [[menu.main]]
     name = "Presentations"
