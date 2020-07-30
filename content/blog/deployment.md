@@ -4,7 +4,7 @@ date: 2020-07-30T17:43:06+02:00
 slug: "deployment"
 description: "Hvordan løser man det sværeste problem i Machine Learning?"
 keywords: []
-draft: true
+toc: true
 tags: []
 ---
 # Det sværeste problem i machine learning?

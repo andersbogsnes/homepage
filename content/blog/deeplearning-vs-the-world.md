@@ -4,7 +4,6 @@ date: 2019-04-09T17:55:21+02:00
 slug: "deeplearning-vs-the-world"
 description: "Når Deep learning ikke er svaret"
 keywords: []
-draft: true
 tags: []
 toc: true
 ---

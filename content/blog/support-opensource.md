@@ -4,7 +4,6 @@ date: 2019-08-29T18:12:55+02:00
 slug: "support-opensource"
 description: "Hvordan kan du støtte op om Open Source"
 keywords: []
-draft: true
 tags: []
 toc: true
 ---

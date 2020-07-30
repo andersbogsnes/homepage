@@ -2,9 +2,9 @@
 title: "Data Science Kode != Produktionskode"
 date: 2019-01-22T17:41:42+02:00
 slug: "framework"
-description: ""
+description: "Data science kode er ofte ikke klar for produktion"
 keywords: []
-draft: true
+toc: true
 tags: []
 ---
 

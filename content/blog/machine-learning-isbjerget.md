@@ -4,7 +4,6 @@ date: 2019-10-03T18:13:58+02:00
 slug: "machine-learning-isbjerget"
 description: "De resterende 90% af Machine Learning processen"
 keywords: []
-draft: true
 tags: []
 toc: true
 ---

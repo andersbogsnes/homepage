@@ -4,8 +4,8 @@ date: 2019-12-11T17:34:12+02:00
 slug: "ml_testing"
 description: "Are you testing your ML code?"
 keywords: []
-draft: true
 tags: []
+toc: true
 ---
 
 # Tester du?

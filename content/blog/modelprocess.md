@@ -4,7 +4,7 @@ date: 2020-07-30T17:44:51+02:00
 slug: "modelprocess"
 description: "Hvordan bygger vi pipelines til at deploye ML mod"
 keywords: []
-draft: true
+toc: true
 tags: []
 ---
 
