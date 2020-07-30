@@ -1,4 +1,4 @@
-baseURL = "http://abogsnes.com"
+baseURL = "https://abogsnes.com"
 languageCode = "en-us"
 title = "Homepage"
 theme = ["hugo-theme-codex", "reveal-hugo"]
