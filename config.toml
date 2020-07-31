@@ -1,6 +1,6 @@
 baseURL = "https://abogsnes.com"
 languageCode = "en-us"
-title = "Homepage"
+title = "Anders Bogsnes"
 theme = ["hugo-theme-codex", "reveal-hugo"]
 enableEmoji = true
 
