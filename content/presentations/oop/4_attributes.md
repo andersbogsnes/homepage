@@ -15,29 +15,18 @@ We can *initialize* the class with some data
 
 ```python
 class SalesPerson:
-    def __init__(self, name, age, sales_budget):
-        self.age = age
+    def __init__(self, name, age):
         self.name = name
-        self.sales_budget = sales_budget
+        self.age = age
 
->>> james = SalesPerson(name="James", age=32, sales_budget=1000)
+>>> james = SalesPerson(name="James", age=32)
 >>> james.age
 32
 ```
 
 ---
 
-Now we can make as many salespeople as we want
-
-```python
->>> mike = SalesPerson(name="Mike", age=40, sales_budget=2000)
->>> mike.age
-40
-```
-
----
-
-## The mystical `self`
+## Aside: The mystical `self`
 
 - A class is a **blueprint** of something
 - A blueprint can create many **instances** with it's own unique data
@@ -49,6 +38,16 @@ Now we can make as many salespeople as we want
 
 ---
 
+Now we can make as many salespeople as we want
+
+```python
+>>> mike = SalesPerson(name="Mike", age=40)
+>>> mike.age
+40
+```
+
+---
+
 ### We can change attributes
 
 > We're all consenting adults
@@ -56,9 +55,9 @@ Now we can make as many salespeople as we want
 > -- <cite>Guido van rossum</cite>
 
 ```python
->>> james.name = "Jamie"
+>>> james.name = "Tony"
 >>> james.name
-"Jamie"
+"Tony"
 ```
 
 ---
