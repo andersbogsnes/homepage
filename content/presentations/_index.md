@@ -1,5 +1,3 @@
 ---
-title: ""
+title: "Various Presentations I've given"
 ---
-
-{{< list_presentations >}}
