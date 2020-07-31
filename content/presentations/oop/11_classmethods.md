@@ -69,12 +69,12 @@ We can then use it to create a `SalesPerson` from our json file
 >>> john.name
 "John"
 ```
+
 ---
 
 Now if we want to add our `contact_method` attribute, we just need to add it to the constructor!
 
 :smile:
-
 
 ---
 
@@ -93,7 +93,7 @@ Modify the Organization class to have an alternate constructor which accepts a J
 
 ### It should
 
-- have a classmethod `from_json` which will construct a list of SalesPeople and create an instance of Organization with that list 
+- have a classmethod `from_json` which will construct a list of SalesPeople and create an instance of Organization with that list
 
 ---
 

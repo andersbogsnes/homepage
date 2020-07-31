@@ -51,7 +51,7 @@ class SalesPerson:
 "<SalesPerson James>"
 ```
 
---- 
+---
 
 ## Exercise - 2 mins
 

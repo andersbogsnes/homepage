@@ -107,5 +107,4 @@ We can now change `full_name` and update `first_name` and `last_name` are update
 "Thomas"
 ```
 
-
 {{% /section %}}

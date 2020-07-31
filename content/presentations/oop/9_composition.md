@@ -92,7 +92,7 @@ Create an `Organization` class *composed* of some number of `SalesPerson`
 ### Criteria
 
 - `SalesPerson` should have a method `work` which prints the person's name and how they're doing work
-- The Organization should have a method `work` which *delegates* to `SalesPerson`'s `work` method 
+- The Organization should have a method `work` which *delegates* to `SalesPerson`'s `work` method
 
 ---
 

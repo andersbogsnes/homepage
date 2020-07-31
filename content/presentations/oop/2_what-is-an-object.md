@@ -5,7 +5,7 @@ outputs: ["Reveal"]
 
 {{% section %}}
 
-## What is an Object?
+## What is an Object
 
 An object typically has *attributes* and *behaviour*
 

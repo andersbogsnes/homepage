@@ -39,8 +39,8 @@ Now we can make as many salespeople as we want
 
 ## The mystical `self`
 
-- A class is a **blueprint** of something. 
-- A blueprint can create many **instances** with it's own unique data.
+- A class is a **blueprint** of something
+- A blueprint can create many **instances** with it's own unique data
 
 ---
 

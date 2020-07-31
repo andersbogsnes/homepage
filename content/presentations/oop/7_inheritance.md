@@ -22,7 +22,7 @@ class TiedAgent(SalesPerson):
 
 ---
 
-Inherited classes still have access to its parents methods 
+Inherited classes still have access to its parents methods
 
 ```python
 class Phoner(SalesPerson):
