@@ -7,4 +7,4 @@ outputs: ["Reveal"]
 
 {{< slide background-image="/images/python_code.jpg" >}}
 
-# OOP in Python
+<h1 style="color: white">OOP in Python</h1>

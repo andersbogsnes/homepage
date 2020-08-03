@@ -1,4 +1,0 @@
----
-title: ""
-outputs: ["Reveal"]
----

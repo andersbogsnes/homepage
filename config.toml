@@ -41,4 +41,6 @@ isHTML = true
 
 [params.reveal_hugo]
 transition_speed = 'fast'
-theme="league"
+theme="serif"
+width=1024
+height=768

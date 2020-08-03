@@ -13,10 +13,11 @@ ML Tooling is a toolbox developed to help put machine learning models into produ
 
 It also has a number of quality-of-life functions to avoid repeated code across projects
 
+- Datasets
 - Plotting
+- Pandas-friendly transformers
 - Hyperparameter Search
 - Logging
 - Saving estimators
-- Pandas-friendly transformers
 
 {{% /section %}}
