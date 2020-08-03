@@ -6,6 +6,6 @@ outputs: ["Reveal"]
 draft: true
 ---
 
-{{< slide background-image="/images/keyboard.jpg" >}
+{{< slide background-image="/images/keyboard.jpg" >}}
 
 # ML Tooling
