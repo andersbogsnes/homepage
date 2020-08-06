@@ -8,4 +8,4 @@ draft: true
 
 {{< slide background-image="/images/keyboard.jpg" >}}
 
-# ML Tooling
+<h1 style="color: white" > ML Tooling </h1>
