@@ -16,8 +16,8 @@ It also has a number of quality-of-life functions to avoid repeated code across 
 - Datasets
 - Plotting
 - Pandas-friendly transformers
-- Hyperparameter Search
 - Logging
 - Saving estimators
+- Hyperparameter Search
 
 {{% /section %}}

@@ -259,3 +259,14 @@ Or from one SQLDataset to another if we need to move data between databases
 [14:55:55] - Data dumped...
 [14:55:55] - Inserting data into iris
 ```
+
+---
+
+## Exercise
+
+- Go to https://www.kaggle.com/benroshan/factors-affecting-campus-placement 
+- Create a Kaggle account if you don't have one
+- Download the CSV
+- Create a FileDataset based on this CSV
+
+{{% /section %}}

@@ -32,27 +32,67 @@ All ML Tooling transformers live in `ml_tooling.transformers`
 
 It's simple to implement your own, and is considered part of the scikit-learn toolkit
 
+The [documentation](https://ml-tooling.readthedocs.io/en/stable/transformers.html) has plenty on the available transformers
+
 ---
 
-## Select
+## A typical pipeline
 
-`Select` allows you to select columns from the DataFrame, and is usually used as a first step in a Pipeline
+We want to set up a Pipeline describing what features we want to use, how to preprocess them and join them together
 
-```python
->>> Select(["col1", "col2"])
-```
+---
 
---- 
-
-## FillNA
-
-Fills NaNs with multiple different strategies or simply a fill value. 
-
-Also includes a `indicate_nan` param, which will add a column indicating whether the value was `NaN`
+### Define our features
 
 ```python
->>> FillNA(strategy="mean", indicate_nan=True)
->>> FillNA("missing")
+from ml_tooling.transformers import Pipeline, DFFeatureUnion, Select, FillNA, ToCategorical, DFStandardScaler
+
+age = Pipeline([
+    ("select", Select("age")),
+    ("fillna", FillNA(strategy="mean", indicate_nan=True))
+])
+
+house_type = Pipeline([
+    ("select", Select("house_type")),
+    ("fillna", FillNA("missing", indicate_nan=True)),
+    ("categorical", ToCategorical())
+])
+
+numerical = Pipeline([
+    ("select", Select(["customer_since_days", "car_probability", "profitability"])),
+    ("scale", DFStandardScaler())
+])
 ```
+
+---
+
+### Combine our features
+
+```python
+feature_pipeline = DFFeatureUnion([
+    ("age", age),
+    ("housetype", house_type),
+    ("numerical", numerical)
+])
+
+>>> feature_pipeline.fit_transform(train_x)
+
+```
+---
+
+### Define our Model
+
+```python
+>>> model = Model(RandomForestClassifier(),
+                  feature_pipeline=feature_pipeline)
+```
+
+---
+
+## Exercise
+
+- Setup a pipeline for the FileDataset we made
+- Train a model on the data
+- Explore the plots
 
 {{% /section %}}
