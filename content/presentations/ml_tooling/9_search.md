@@ -1,5 +1,5 @@
 ---
-weights: 90
+weight: 90
 outputs: ["Reveal"]
 ---
 
@@ -136,5 +136,15 @@ with model.log("search"):
                           metrics=["accuracy", "roc_auc"],
                           n_iter=2)
 ```
+
+---
+
+## Exercise
+
+Build the best model you can on the data
+
+- Try some different hyperparameter searches
+- Log some results
+- Save the best estimators
 
 {{% /section %}}

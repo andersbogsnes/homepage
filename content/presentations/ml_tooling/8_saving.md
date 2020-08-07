@@ -61,4 +61,41 @@ It can then be used just like FileStorage, but it will save and load estimators 
 
 *(Must have installed with the artifactory optional dependency - ml_tooling[artifactory])*
 
+---
+
+## Storing a production model
+
+When you are ready to productionize your model we must
+
+- Train the final estimator
+- Save production estimator
+
+```python
+# This will train a final model on all of X - no train-test split
+>>> model.train_estimator()
+>>> model.save_estimator(prod=True) # This will only work in a production package setting!
+```
+
+---
+
+A production estimator expects you to be working in a python package
+
+It looks for a setup.py/pyproject.toml file to establish the root of your project and puts the pickle file in the src folder.
+
+If these don't exist then it will fail.
+
+Make sure to include the pkl file in your package data before publishing your package!
+
+---
+
+## Load production model
+
+If you have installed an ML Tooling based package that has saved a production model correctly, we can load that model
+
+```python
+model = Model.load_production_estimator("name_of_model_package")
+```
+
+This will load the production estimator from the python package
+
 {{% /section %}}
