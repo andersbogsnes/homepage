@@ -159,5 +159,15 @@ Since Git has the concept of the *staging* area, we can *stage* **changes** as m
 - Add the remaining changes
 - Make another commit
 
+---
+
+## Aside - .gitignore
+
+Often we have files we don't want git to keep track of such as editor configuration, large files or temporary files
+
+These can be listed in a special `.gitignore` file in the same location as your .git directory and you should always have one!
+
+A template for a python `.gitignore` file can be found [here](https://github.com/github/gitignore/blob/master/Python.gitignore)
+
 
 {{% /section %}}
