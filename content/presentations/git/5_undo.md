@@ -166,7 +166,80 @@ c26f717 My third commit
 722b317 Initial commit
 
 ```
-This is a bit harder to undo 
-q
-- git log
-- git reflog
+---
+
+This is a bit harder to undo as our label is now pointing to a different commit - the other commits are *orphaned*
+
+If you are unsure you're doing it right - write down the SHA of the commit you're currently on - that way you can always get back
+
+---
+
+{{< figure src=https://wac-cdn.atlassian.com/dam/jcr:4c7d368e-6e40-4f82-a315-1ed11316cf8b/02-updated.png?cdnVersion=1172 height=640 width=480 >}}
+
+---
+
+## Reflog
+
+We can also see a history of when we changed HEAD (our current location) by using `git reflog`
+
+```bash
+>>> git reflog
+1359962 (HEAD -> master) HEAD@{0}: checkout: moving from 1359962e527f4ab2c15c7703b233fb4e8a0afb83 to master
+1359962 (HEAD -> master) HEAD@{1}: checkout: moving from master to 1359962
+1359962 (HEAD -> master) HEAD@{2}: reset: moving to 1359962
+0f7f27d HEAD@{3}: revert: Revert "Committing to my branch"
+1359962 (HEAD -> master) HEAD@{4}: reset: moving to HEAD@{3}
+1359962 (HEAD -> master) HEAD@{5}: reset: moving to HEAD@{2}
+90b8e51 HEAD@{6}: checkout: moving from master to master
+90b8e51 HEAD@{7}: reset: moving to 90b8e51
+1359962 (HEAD -> master) HEAD@{8}: checkout: moving from 722b3172cabe09b98d54ad91d9ceddd4c31e86aa to master
+722b317 HEAD@{9}: checkout: moving from master to 722b317
+1359962 (HEAD -> master) HEAD@{10}: checkout: moving from 722b3172cabe09b98d54ad91d9ceddd4c31e86aa to master
+722b317 HEAD@{11}: checkout: moving from master to 722b317
+1359962 (HEAD -> master) HEAD@{12}: checkout: moving from 722b3172cabe09b98d54ad91d9ceddd4c31e86aa to master
+```
+
+Then we can do `git switch` as normal
+
+---
+
+## Fixing detached state
+
+When we switch to a given commit, git warns us
+
+```bash
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+```
+
+---
+
+Git is lettting us know that we are no longer on a branch, so any changes we make won't have a *label* (unless you write down the SHA)
+
+If we want to put a *label* on the commit, we can use `switch -c` to create a new branch or we can get back to labelled territory with 
+`git switch -` to take you back to the last branch you were on
+
+---
+
+## Exercise 30s
+
+- Switch to an earlier commit
+- Create a new branch from that commit
+- Make a change to a file
+- Add and commit that change
+- Go back to master
+- Run `git log --graph --all --oneline`
+
+Where is your new branch coming from?
+
+{{% /section %}}
