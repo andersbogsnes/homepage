@@ -117,8 +117,10 @@ WORKDIR /app
 
 ## Exercise - 10 mins
 
+- Create a new folder named `db`
 - Find the postgres docker image [docs](https://hub.docker.com/_/postgres)
-- Write a Dockerfile to start a postgres 12 database initialized with a table
+- Write a Dockerfile in the `db` directory to start a postgres 12 database
+- Initialize the database with a table matching the datafile found [here](https://www.kaggle.com/benroshan/factors-affecting-campus-placement)
 - Build the image with a tag
 - Run the image
 - Connect to the database with Pycharm
