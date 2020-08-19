@@ -5,7 +5,7 @@ outputs: ["Reveal"]
 
 {{% section %}}
 
-## The Dockerfile
+{{< slide background-image=https://developers.redhat.com/blog/wp-content/uploads/2017/11/dockerfile.png background-size=30% >}}
 
 ---
 

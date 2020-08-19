@@ -5,7 +5,9 @@ outputs: ["Reveal"]
 
 {{% section %}}
 
-# Docker build
+{{< slide background-image=https://searchengineland.com/figz/wp-content/seloads/2017/01/bricks-construction-building-foundation-ss-1920.jpg >}}
+
+<h1 style="color: white">Docker build</h1>
 
 ---
 
