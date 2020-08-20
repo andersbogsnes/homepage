@@ -77,5 +77,36 @@ class Organization:
 
     def __repr__(self):
         return f"<{self.name}: {self.num_employees} employees>"
+```
+
+---
+
+## Everything is an object
+
+Everything in python is an object under the hood. 
+
+Ever wonder why we can do this?
+
+```python
+>>> "anders bogsnes".title()
+"Anders Bogsnes"
+```
+
+---
+
+We can do silly things
+
+```python
+class MyInt(int):
+    def add_one(self):
+        return self + 1
+>>> my_int = MyInt(2)
+>>> my_int.add_one()
+3
+```
+
+---
+
+{{< slide background-image=https://i.redd.it/o5fhi4uw33b51.jpg background-size=80% >}}
 
 {{% /section %}}

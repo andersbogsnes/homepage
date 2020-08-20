@@ -13,6 +13,8 @@ outputs: ["Reveal"]
 
 Most often used as an alternate constructor for a class.
 
+---
+
 What if the data for our sales people was in a JSON file?
 
 ```json
@@ -41,9 +43,9 @@ john = SalesPerson(name=data["name"],
 
 This works, but what if we need to add a new parameter, `contact_method`?
 
-We would need to go through all our code and update every location we create a SalesPerson
+<p class="fragment">We would need to go through all our code and update every location we create a SalesPerson</p>
 
-:cold_sweat:
+<p class="fragment">:cold_sweat:</p>
 
 ---
 
@@ -74,7 +76,7 @@ We can then use it to create a `SalesPerson` from our json file
 
 Now if we want to add our `contact_method` attribute, we just need to add it to the constructor!
 
-:smile:
+<p class="fragment">:smile:</p>
 
 ---
 
@@ -106,10 +108,6 @@ import pathlib
 class Organization:
     def __init__(self, sales_people):
         self.sales_people = sales_people
-
-    @property
-    def num_employees(self):
-        return len(self.sales_people)
 
     @classmethod
     def from_json(cls, file_path):

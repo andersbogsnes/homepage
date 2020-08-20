@@ -52,7 +52,7 @@ Now we can make as many salespeople as we want
 
 > We're all consenting adults
 >
-> -- <cite>Guido van rossum</cite>
+> -- <cite>Guido van Rossum</cite>
 
 ```python
 >>> james.name = "Tony"

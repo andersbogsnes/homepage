@@ -85,9 +85,12 @@ class Organization:
 
 ---
 
+
 ## Exercise - 5 mins
 
 Create an `Organization` class *composed* of some number of `SalesPerson`
+
+---
 
 ### Criteria
 
@@ -131,10 +134,96 @@ class Organization:
 
 ---
 
+## Alternate composition
+
+We could compose a Salesperson as well
+
+```python
+class SalesPerson:
+    def __init__(self, name, sales_method):
+        self.name = name
+        self.sales_method = sales_method
+
+    def sell_to_customer(self, customer):
+        self.sales_method.sell(customer)
+```
+
+---
+
+Now we can make a PhoneSalesMethod and a MeetingSalesMethod class and pass to our salesperon
+
+```python
+class MeetingSalesMethod:
+    def sell(self, customer):
+        self.go_to_meeting(customer)
+
+>>> tied_agent = SalesPerson(name="Mike", sales_method=MeetingSalesMethod())
+```
+
+---
+
+## Remember, functions are objects too
+
+We could also define a sales_function
+
+```python
+class SalesPerson:
+    def __init__(self, name, sales_method):
+        self.name = name
+        self.sales_method = sales_method
+
+    def sell_to_customer(self, customer):
+        self.sales_method(customer)
+```
+
+---
+
+```python
+def phone_sales(customer):
+    call(customer)
+
+>>> tied_agent = SalesPerson("Mike", sales_method=phone_sales)
+```
+
+We are *composing* functionality together to define the behaviour of our SalesPerson
+
+---
+
+We see this pattern in Python all over
+
+If I want to sort a list by a given value
+
+```python
+to_sort = [(99, "a"), (98, "b"), (1, "z")]
+
+# I want to sort by the second value of the tuple
+>>> sorted(to_sort, key=lambda x: x[1])
+```
+
+---
+
+If I want to support dumping numpy arrays to JSON
+
+```python
+import json
+import numpy as np
+
+
+class CustomEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, np.int64):
+            return int(o)
+        return super().default(o)
+
+>>> json.dumps(np.int64(20), cls=CustomEncoder)
+```
+
+---
+
 ## Recap Composition
 
 - We can *compose* objects together to change how our program works
 - We can *delegate* to other objects so our class doesn't need to know
-- Leads to less coupling - We can pass any object that has a `work` method to `Organization`
+- Leads to *less coupling* - We can pass any object that has a `work` method to `Organization`
 
 {{% /section %}}

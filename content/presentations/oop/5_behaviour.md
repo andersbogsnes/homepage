@@ -42,9 +42,9 @@ We have added the `greet` *behaviour* to our class - Our `SalesPerson` now knows
 
 ## Exercise - 2 mins
 
-## Exercise
-
 Create an Organization class.
+
+---
 
 ### It should
 
@@ -63,5 +63,7 @@ class Organization:
     def work(self):
         print(f"{self.num_employees} did some work")
 ```
+
+
 
 {{% /section %}}

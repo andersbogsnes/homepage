@@ -18,10 +18,6 @@ class SalesPerson:
 james = SalesPerson()
 ```
 
----
-
-## Terminology
-
 - `james` is an **instance** of `SalesPerson`
 - we have **instantiated** a new **instance** of `SalesPerson`
 

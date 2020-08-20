@@ -25,6 +25,7 @@ class Phoner:
 
 >>> Phoner.lookup_phonenumber(35477777)
 "Phone number 35477777 belongs to John"
+
 >>> phoner = Phoner("Joe")
 >>> phoner.lookup_phonenumber(35477777)
 "Phone number 35477777 belongs to John"

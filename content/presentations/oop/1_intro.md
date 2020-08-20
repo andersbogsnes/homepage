@@ -3,13 +3,13 @@ weight: 10
 outputs: ["Reveal"]
 ---
 
-# OOP in Python
+{{% section %}}
+
+# What is OOP?
 
 OOP is a style of programming that uses Objects to represent concepts in code
 
 ---
-
-{{% section %}}
 
 ## Representing the world in code
 

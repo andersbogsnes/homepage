@@ -14,7 +14,7 @@ outputs: ["Reveal"]
 
 ---
 
-We need all SalesPeople to have a `work` method so our `Organization` can call it
+We need all `SalesPeople` to have a `work` method so our `Organization` can call it
 
 `work` is an **interface** - a contract of sorts
 
