@@ -26,6 +26,7 @@ What happens if we want to print our `SalesPerson`?
 class SalesPerson:
     def __init__(self, name):
         self.name = name
+
 >>> james = SalesPerson("James")
 >>> print(james)
 <__main__.SalesPerson object at 0x7f479d47db50>

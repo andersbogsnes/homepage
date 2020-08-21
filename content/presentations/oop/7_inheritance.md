@@ -92,6 +92,16 @@ They should:
 ## Solution
 
 ```python
+class Organization:
+    def __init__(self, name, num_employees):
+        self.name = name
+        self.num_employees = num_employees
+
+```
+
+---
+
+```python
 class CustomerServiceCenter(Organization):
     def __init__(self, num_employees, contact_method):
         super().__init__("KSC", num_employees)

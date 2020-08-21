@@ -20,8 +20,7 @@ We can say that an Organization is *composed* of salespeople
 
 ```python
 class Organization:
-    def __init__(self, name, sales_people):
-        self.name = name
+    def __init__(self, sales_people):
         self.sales_people = sale_people
 
     def work():
@@ -30,7 +29,7 @@ class Organization:
 
 >>> james = SalesPerson("James")
 >>> mike = SalesPerson("Mike")
->>> org = Organization("TiedAgent", sales_people=[james, mike])
+>>> org = Organization(sales_people=[james, mike])
 >>> org.work()
 "2 sales people did some work"
 ```
@@ -123,8 +122,9 @@ class Organization:
         self.sales_people = sales_people
 
     def work(self):
-        for sales_person in sales_people:
+        for sales_person in self.sales_people:
             sales_person.work()
+
 >>> org = Organization([james, jane])
 >>> org.work()
 "James spent the day meeting customers"
@@ -197,7 +197,8 @@ If I want to sort a list by a given value
 to_sort = [(99, "a"), (98, "b"), (1, "z")]
 
 # I want to sort by the second value of the tuple
->>> sorted(to_sort, key=lambda x: x[1])
+>>> sorted(to_sort, key=lambda x: x[0])
+[(1, 'z'), (98, 'b'), (99, 'a')]
 ```
 
 ---
@@ -215,7 +216,11 @@ class CustomEncoder(json.JSONEncoder):
             return int(o)
         return super().default(o)
 
+>>> json.dumps(np.int64(20))
+...
+TypeError: Object of type int64 is not JSON serializable
 >>> json.dumps(np.int64(20), cls=CustomEncoder)
+'20'
 ```
 
 ---

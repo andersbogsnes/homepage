@@ -24,7 +24,6 @@ class SalesPerson:
 
     def __init__(self, name):
         self.name = name
-        self.age = age
 
     def greet(self):
         print(f"Hi, I'm {self.name} from {self.company}")
