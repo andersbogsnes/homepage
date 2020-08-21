@@ -1,7 +1,7 @@
 ---
 title: "OOP"
 description: "An introduction to Object-Oriented programming in Python"
-date: 2020-07-30T17:55:21+02:00
+date: 2020-08-21T09:00:00+02:00
 outputs: ["Reveal"]
 ---
 
