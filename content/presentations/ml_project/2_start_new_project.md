@@ -9,9 +9,7 @@ outputs: ["Reveal"]
 
 ---
 
-## Cookiecutter Data Science
-
-### Install pipx
+## Install pipx
 
 https://github.com/pipxproject/pipx
 
@@ -25,7 +23,9 @@ $ pipx install cookiecutter
 
 ---
 
-- Use cookiecutter
+## Cookiecutter Data Science
+
+We are going to base our project on the Data Science cookiecutter
 
 https://drivendata.github.io/cookiecutter-data-science/
 
@@ -107,6 +107,7 @@ Choose from 1, 2 [1]: 1
 
 - We want a `src/<package_name>` layout (https://hynek.me/articles/testing-packaging/#src)
 - We want to use poetry instead of pip
+- We want a centralized configuration file in our package
 
 The rest is up to you to decide as we work through the project
 
@@ -150,6 +151,7 @@ $ pyenv virtualenv 3.8.5 price_forecaster
 
 $ pyenv local price_forecaster
 ```
+
 ---
 
 ```bash
@@ -225,6 +227,17 @@ $ poetry add --dev pytest
 - Poetry will always install in a virtualenv
 - If you are already in one, it will install there
 - If you are not, it will automatically generate one and install there
+
+---
+
+# Assignment
+
+- Setup your project with cookiecutter and poetry
+
+---
+
+## Create a configuration file
+
 
 
 {{% /section %}}
