@@ -9,30 +9,25 @@ outputs: ["Reveal"]
 
 ---
 
-Everything in ML Tooling is based around pandas `DataFrames` - this design decision lets us pass metadata such as column names
-to our functions and methods.
-
-As a consequence, we need to implement DataFrame-friendly transformers in ML-Tooling
+- Everything in ML Tooling is based around pandas `DataFrames`
+- This lets us pass metadata such as column names to our functions and methods.
+- Thus, we need to implement DataFrame-friendly transformers in ML-Tooling
 
 ---
 
 ## The importance of Pipelines
 
-The `Pipeline`  is the foundation of building robust preprocessing in scikit-learn.
-
-It lets us specify our entire data pipeline as a single object
-
-Additionally, scikit-learn makes sure to only **learn** attributes about your data when training, so that no accidental data leakage occurs.
+- The `Pipeline`  is the foundation of building robust preprocessing in scikit-learn.
+- It lets us specify our entire data pipeline as a single object
+- Additionally, scikit-learn makes sure to only **learn** attributes about your data when training, so that no accidental data leakage occurs.
 
 ---
 
 ## An overview of transformers
 
-All ML Tooling transformers live in `ml_tooling.transformers`
-
-It's simple to implement your own, and is considered part of the scikit-learn toolkit
-
-The [documentation](https://ml-tooling.readthedocs.io/en/stable/transformers.html) has plenty on the available transformers
+- All ML Tooling transformers live in `ml_tooling.transformers`
+- It's simple to implement your own, and is considered part of the scikit-learn toolkit
+- The [documentation](https://ml-tooling.readthedocs.io/en/stable/transformers.html) has plenty on the available transformers
 
 ---
 
@@ -45,7 +40,13 @@ We want to set up a Pipeline describing what features we want to use, how to pre
 ### Define our features
 
 ```python
-from ml_tooling.transformers import Pipeline, DFFeatureUnion, Select, FillNA, ToCategorical, DFStandardScaler
+from ml_tooling.transformers import (
+    Pipeline,
+    DFFeatureUnion,
+    Select,
+    FillNA,
+    ToCategorical,
+    DFStandardScaler)
 
 age = Pipeline([
     ("select", Select("age")),
@@ -59,7 +60,9 @@ house_type = Pipeline([
 ])
 
 numerical = Pipeline([
-    ("select", Select(["customer_since_days", "car_probability", "profitability"])),
+    ("select", Select(["customer_since_days",
+                       "car_probability",
+                       "profitability"])),
     ("scale", DFStandardScaler())
 ])
 ```
@@ -76,8 +79,8 @@ feature_pipeline = DFFeatureUnion([
 ])
 
 >>> feature_pipeline.fit_transform(train_x)
-
 ```
+
 ---
 
 ### Define our Model

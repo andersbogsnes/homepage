@@ -11,17 +11,16 @@ outputs: ["Reveal"]
 
 ## Log what our models do
 
-We can log the output of our models, so that we can keep track of what we have done previously
+- We can log the output of our models, so that we can keep track of what we have done previously
+- ML Tooling can automatically keep track of the models we train if we turn on logging
 
-ML Tooling can automatically keep track of the models we train if we turn on logging
-
----
-
-```
+```python
 >>> model = Model(RandomForestClassifier())
 >>> with model.log("textclassifier"):
         model.score_estimator(dataset)
 ```
+
+---
 
 This will create a folder named "runs" with a yaml file inside
 

@@ -93,8 +93,7 @@ They should:
 
 ```python
 class Organization:
-    def __init__(self, name, num_employees):
-        self.name = name
+    def __init__(self,num_employees):
         self.num_employees = num_employees
 
 ```
@@ -104,7 +103,7 @@ class Organization:
 ```python
 class CustomerServiceCenter(Organization):
     def __init__(self, num_employees, contact_method):
-        super().__init__("KSC", num_employees)
+        super().__init__(num_employees)
         self.contact_method = contact_method
 
     def work(self):
@@ -117,7 +116,7 @@ class CustomerServiceCenter(Organization):
 ```python
 class FranchiseOffice(Organization):
     def __init__(self, num_employees, contact_method):
-        super().__init__("Franchise", num_employees)
+        super().__init__(num_employees)
         self.contact_method = contact_method
 
     def work(self):

@@ -78,13 +78,12 @@ When you are ready to productionize your model we must
 
 ---
 
-A production estimator expects you to be working in a python package
-
-It looks for a setup.py/pyproject.toml file to establish the root of your project and puts the pickle file in the src folder.
-
-If these don't exist then it will fail.
-
-Make sure to include the pkl file in your package data before publishing your package!
+<ul>
+<li>A production estimator expects you to be working in a python package</li>
+<li class="fragment">It looks for a setup.py/pyproject.toml file to establish the root of your project and puts the pickle file in the src folder</li>
+<li class="fragment">If these don't exist then it will fail</li>
+<li class="fragment">Make sure to include the pkl file in your package data before publishing your package!</li>
+</ul>
 
 ---
 

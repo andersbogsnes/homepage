@@ -83,6 +83,7 @@ We can also do cross-validated scoring by passing a `cv` parameter
 We can now inspect the results by using the `Results.plot` accessor
 
 ---
+
 ## Confusion Matrix
 
 We can plot a confusion matrix, with the option of normalizing
@@ -184,8 +185,9 @@ we need to increase or decrease complexity
 
 ## Validation curve
 
-Another diagnostic tool we have is the validation curve - this lets you plot the performance of the model against a hyperparameter.
-Then we can see the effect of the hyperparameter on the model and get an intution for how the model responds to that parameter
+The validation curve lets you plot the performance of the model against a hyperparameter.
+
+It shows effect of the hyperparameter on the model and gives an intuition for how the model responds to that parameter
 
 ```python
 >>> result.plot.validation_curve("max_depth",
@@ -206,6 +208,7 @@ If we have a regression problem, the plots available will be different, although
 from ml_tooling.data import load_demo_dataset
 from ml_tooling import Model
 from sklearn.ensemble import RandomForestRegressor
+
 >>> dataset = load_demo_dataset("boston")
 >>> model = Model(RandomForestRegressor())
 >>> result = model.score_estimator(dataset)

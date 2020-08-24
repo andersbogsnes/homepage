@@ -5,7 +5,7 @@ outputs: ["Reveal"]
 
 {{% section %}}
 
-# Ml-tooling :heart: sklearn
+# Ml-tooling :heart: scikit-learn
 
 ---
 
