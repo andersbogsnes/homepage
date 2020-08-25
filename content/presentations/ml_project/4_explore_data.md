@@ -27,4 +27,19 @@ The data is updated monthly - write a function to download the data given a day,
 
 {{< gist andersbogsnes 93ec25e87df35c623aeb53087f9bf854 >}}
 
+---
+
+## Explore the data
+
+Spend some time exploring the data - Write it down in the sphinx documentation!
+
+- What features look promising?
+- What dtypes are the features?
+- Is there missing data?
+- Is it high cardinality?
+- Ideas for preprocessing?
+- Hypotheses?
+- What can we throw out?
+
+
 {{% /section %}}

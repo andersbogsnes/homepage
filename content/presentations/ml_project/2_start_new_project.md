@@ -238,6 +238,17 @@ $ poetry add --dev pytest
 
 ## Create a configuration file
 
+We want to be able to reference our data folders - so let's have a config file to import those paths from
 
+```python
+import pathlib
+
+# This depends on where the config file is
+ROOT_DIR = pathlib.Path(__file__).parents[2]
+DATA_DIR = ROOT_DIR / "data"
+RAW_DIR = DATA_DIR / "raw"
+INTERIM_DIR = DATA_DIR / "interim"
+PROCESSED_DIR = DATA_DIR / "processed"
+```
 
 {{% /section %}}
