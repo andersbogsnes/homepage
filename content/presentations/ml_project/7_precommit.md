@@ -1,5 +1,5 @@
 ---
-weight: 80
+weight: 70
 outputs: ["Reveal"]
 ---
 
@@ -14,9 +14,7 @@ outputs: ["Reveal"]
 ## What is it?
 
 - It lets us run quick tests everytime we make a commit by using git `pre-commit hooks`
-
 - It makes it easy to define and install these little scripts by writing a short config file
-
 - It ensures that linting and formatting is run continously on your codebase - no more CI failures!
 
 ---

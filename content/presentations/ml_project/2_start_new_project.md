@@ -108,6 +108,7 @@ Choose from 1, 2 [1]: 1
 - We want a `src/<package_name>` layout (https://hynek.me/articles/testing-packaging/#src)
 - We want to use poetry instead of pip
 - We want a centralized configuration file in our package
+- We want a `tests` directory to put our tests in
 
 The rest is up to you to decide as we work through the project
 

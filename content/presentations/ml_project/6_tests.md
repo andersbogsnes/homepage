@@ -27,10 +27,25 @@ pytest looks for any functions named `test_*` in files named `test_*` and run th
 
 ## A simple test
 
+We need to add our test functions to the `tests` folder in a file named `test_add.py` so pytest will find them
+
 ```python
+def my_add_function(a, b):
+    return a + b
+
 def test_add():
     result = my_add_function(2, 2)
     assert result == 2
+```
+
+---
+
+## Running pytest
+
+To run pytest at the command line, just tell it where the tests are
+
+```bash
+$ pytest ./tests
 ```
 
 ---
@@ -86,23 +101,26 @@ That class can then contain the test code and fixtures related to that functiona
 ---
 
 ```python
+import pytest
+import pandas as pd
+
 class TestDataPipe:
     # scope defines how often the function is rerun
     @pytest.fixture(scope="class")
-    def df():
-        return pd.DataFrame("a": [1, 2, 3], "b": [2, 4, 6])
+    def df(self):
+        return pd.DataFrame({"a": [1, 2, 3], "b": [2, 4, 6]})
 
     # Scope = "class" means once per class
     @pytest.fixture(scope="class")
-    def transformed(df):
+    def transformed(self, df):
         return pipe(df)
 
     # Test one thing per test
-    def test_adds_col_b_correctly(df)
+    def test_adds_col_b_correctly(self, transformed):
         assert df.b == 12
 
     # If it fails, we know exactly what is wrong
-    def test_has_correct_name(df):
+    def test_has_correct_name(self, transformed):
         assert df.b.name == "sum"
 ```
 
@@ -120,6 +138,24 @@ Write some tests!
 
 ## Coverage
 
-Coverage 
+Coverage shows the percentage of lines that have been executed by a test.
+
+It indicates areas that have not had tests written and where we should focus our attention
+
+---
+
+## Adding coverage
+
+To add coverage, we can use a pytest plugin called `pytest-cov`
+
+```bash
+$ poetry add --dev pytest-cov
+```
+
+Now we can get test coverage
+
+```bash
+$ pytest --cov ./tests
+```
 
 {{% /section %}}
