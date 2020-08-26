@@ -43,13 +43,6 @@ http://insideairbnb.com/
 
 ---
 
-poetry
-
-getting data
-    - Selecting datatypes
-
-documentation
-    - Document while working - not after
 
 building dataset
     - Include data download

@@ -112,7 +112,14 @@ class TestDataPipe:
 
 Write some tests!
 
-- Create some mock data 
+- Create some mock data
 - transform it and verify the output
+- run pytest on your test code
+
+---
+
+## Coverage
+
+Coverage 
 
 {{% /section %}}

@@ -83,6 +83,8 @@ commands = black .
 
 ## Points of note
 
-tox will remove all environment variables when running - use `passenv` or `setenv` if you need to keep some
+- tox will remove all environment variables when running - use `passenv` or `setenv` if you need to keep some
+- tox is installing in a separate environment - you need to specify all dependencies
+- Run a specific environment with `-e` e.g `tox -e black`
 
 {{% /section %}}

@@ -232,7 +232,8 @@ $ poetry add --dev pytest
 
 # Assignment
 
-- Setup your project with cookiecutter and poetry
+- Setup your project with cookiecutter, poetry and git
+- Create a gitlab repo for your project
 
 ---
 
