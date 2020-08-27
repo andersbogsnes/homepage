@@ -61,7 +61,7 @@ test:
 
 ---
 
-## Exercise - 2 min
+## Exercise
 
 - Add the .gitlab-ci.yml to a new branch
 - Push the new branch
@@ -102,7 +102,7 @@ We need to write some tests!
 
 ---
 
-## Exercise 5 mins
+## Exercise
 
 - Create a `test_calculator.py`
 - Write some tests for the add function

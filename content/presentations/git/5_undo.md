@@ -240,7 +240,7 @@ If we want to put a *label* on the commit, we can use `switch -c` to create a ne
 
 ---
 
-## Exercise 30s
+## Exercise
 
 - Switch to an earlier commit
 - Create a new branch from that commit

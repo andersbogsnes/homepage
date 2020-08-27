@@ -37,7 +37,7 @@ Pair up two and two (or three). Do the rest of the exercise on one machine
 
 ---
 
-## Exercise - 2 mins
+## Exercise
 
 - Create a new directory on your machine called `calculator`
 - In that directory, create a new file called `calculator.py`
@@ -84,7 +84,7 @@ $ git push -u origin develop
 
 ---
 
-## Exercise 1 min
+## Exercise
 
 Add your partner to your repo
 

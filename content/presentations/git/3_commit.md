@@ -152,7 +152,7 @@ Since Git has the concept of the *staging* area, we can *stage* **changes** as m
 
 ---
 
-### Exercise - 30s
+### Exercise
 
 - Make commit
 - Run `git status`

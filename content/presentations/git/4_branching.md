@@ -32,7 +32,7 @@ nothing to commit, working tree clean
 
 ---
 
-## Exercise - 30s
+## Exercise
 
 - Add some more text to example.txt
 - Add a new file example2.txt with some text
