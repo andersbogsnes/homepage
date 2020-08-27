@@ -14,14 +14,14 @@ To have git track our code, we must tell git that it should create a new *reposi
 ## Git Init
 
 ```bash
->>> git init
+$ git init
 Initialized empty Git repository in /home/anders/projects/git_demo/.git/
 ```
 
 Now there should be something in your directory
 
 ```bash
->>> ls -a
+$ ls -a
 .  ..  .git
 ```
 
@@ -34,7 +34,7 @@ Let's have a quick peek under the covers
 *Look, don't touch - You will (almost) never need to do anything in here* 
 
 ```bash
->>> tree -a .git
+$ tree -a .git
 .git
 ├── branches # Any branches are stored here
 ├── config # Any local configuration is here

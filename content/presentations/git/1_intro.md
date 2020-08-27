@@ -35,13 +35,13 @@ It is a must for working with code in this day and age
 Create an empty directory we can work with
 
 ```bash
->>> mkdir git_demo && cd git_demo
+$ mkdir git_demo && cd git_demo
 ```
 
 Check that it is empty
 
 ```bash
->>> ls -a
+$ ls -a
 .  ..
 ```
 

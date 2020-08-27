@@ -14,7 +14,7 @@ The whole point of a VCS is to be able to navigate between versions and we have 
 ## Examine the history
 
 ```bash
->>> git log
+$ git log
 commit 1359962e527f4ab2c15c7703b233fb4e8a0afb83 (HEAD -> master)
 Author: Anders Bogsnes <andersbogsnes@gmail.com>
 Date:   Mon Aug 10 15:03:13 2020 +0200
@@ -45,7 +45,7 @@ Date:   Mon Aug 10 14:19:00 2020 +0200
 ## A shorter version
 
 ```bash
->>> git log --oneline
+$ git log --oneline
 1359962 (HEAD -> master) Committing to my branch
 c26f717 My third commit
 90b8e51 Second commit
@@ -61,7 +61,7 @@ c26f717 My third commit
 ## Timetravel with git
 
 ```bash
->>> cat example.txt # Look at my file
+$ cat example.txt # Look at my file
 My test file
 
 Now has a more descriptive body
@@ -69,12 +69,15 @@ Now has a more descriptive body
 And some more texto
 
 Fourth line of text
->>> git switch -d 722 # Go back in time to SHA 722
->>> ls
+
+$ git switch -d 722 # Go back in time to SHA 722
+$ ls
 example.txt # No example2.txt!
->>> cat example.txt # Look at the file again
+
+$ cat example.txt # Look at the file again
 My new text file # What I wrote in my file when I created it
->>> git switch - # Go back to newest version of master
+
+$ git switch - # Go back to newest version of master
 ```
 
 ---
@@ -84,12 +87,14 @@ My new text file # What I wrote in my file when I created it
 We can change a file to the way it looked before
 
 ```bash
->>> git restore example.txt -s 722 # Restore the file from revision with SHA 722
->>> ls
+$ git restore example.txt -s 722 # Restore the file from revision with SHA 722
+$ ls
 example2.txt  example.txt
->>> cat example.txt
+
+$ cat example.txt
 My new text file
->>> git status
+
+$ git status
 On branch master
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -122,17 +127,19 @@ We can do that in two ways:
 Create a new commit that does the opposite of the specified commit
 
 ```bash
->>> git log --oneline
+$ git log --oneline
 * 1359962 (HEAD -> master) Committing to my branch
 * c26f717 My third commit
 * 90b8e51 Second commit
 * 722b317 Initial commit
->>> git revert 135
+
+$ git revert 135
 Removing example2.txt
 [master 0f7f27d] Revert "Committing to my branch"
  2 files changed, 3 deletions(-)
  delete mode 100644 example2.txt
->>> ls
+
+$ ls
 example.txt
 ```
 
@@ -149,23 +156,25 @@ We will talk more about publishing later
 Chop out all commits after the specified one. Resets the history as if that revision is the newest
 
 ```bash
->>> git log
+$ git log
 0f7f27d (HEAD -> master) Revert "Committing to my branch"
 1359962 Committing to my branch
 c26f717 My third commit
 90b8e51 Second commit
 722b317 Initial commit
->>> git reset 1359
+
+$ git reset 1359
 Unstaged changes after reset:
 M	example.txt
 D	example2.txt
->>> git log
+
+$ git log
 1359962 (HEAD -> master) Committing to my branch
 c26f717 My third commit
 90b8e51 Second commit
 722b317 Initial commit
-
 ```
+
 ---
 
 This is a bit harder to undo as our label is now pointing to a different commit - the other commits are *orphaned*
@@ -183,7 +192,7 @@ If you are unsure you're doing it right - write down the SHA of the commit you'r
 We can also see a history of when we changed HEAD (our current location) by using `git reflog`
 
 ```bash
->>> git reflog
+$ git reflog
 1359962 (HEAD -> master) HEAD@{0}: checkout: moving from 1359962e527f4ab2c15c7703b233fb4e8a0afb83 to master
 1359962 (HEAD -> master) HEAD@{1}: checkout: moving from master to 1359962
 1359962 (HEAD -> master) HEAD@{2}: reset: moving to 1359962

@@ -52,7 +52,7 @@ Pair up two and two (or three). Do the rest of the exercise on one machine
 We need to tell git about our remote repository
 
 ```bash
->>> git remote add origin git@gitlab.com:andersbogsnes/calculator.git
+$ git remote add origin git@gitlab.com:andersbogsnes/calculator.git
 ```
 
 Creates a *label* **origin** :point_right: **my_long_url_i_cant_remember**
@@ -62,7 +62,7 @@ Creates a *label* **origin** :point_right: **my_long_url_i_cant_remember**
 ## Push - Update remote from local
 
 ```bash
->>> git push -u origin master
+$ git push -u origin master
 ```
 
 I want to `push` my changes from my local branch to the branch named `master` at the url specified in `origin` and I want to link these two branches (`-u`)
@@ -75,9 +75,9 @@ I want to `push` my changes from my local branch to the branch named `master` at
 
 ```bash
 # Create a new branch called develop and switch to it
->>> git switch -c develop
+$ git switch -c develop
 # Push local branch develop to origin's develop branch
->>> git push -u origin develop  
+$ git push -u origin develop  
 ```
 
 - Go to gitlab and set development as your default branch (Settings/Repository)
@@ -101,7 +101,7 @@ Your partner should now clone the repo
 ---
 
 ```bash
->>> git clone git@gitlab.com:andersbogsnes/calculator.git
+$ git clone git@gitlab.com:andersbogsnes/calculator.git
 ```
 
 - `clone` creates a full copy of a repository to have locally

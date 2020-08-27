@@ -18,9 +18,10 @@ It is very easy to make a branch to work in parallel
 ## Create a new branch
 
 ```bash
->>> git switch -c my_new_feature # -b means create the branch
+$ git switch -c my_new_feature # -b means create the branch
 Switched to a new branch 'my_new_branch'
->>> git status
+
+$ git status
 On branch my_new_branch
 nothing to commit, working tree clean
 ```
@@ -42,11 +43,13 @@ nothing to commit, working tree clean
 ## Switch between branches
 
 ```bash
->>> ls
+$ ls
 example2.txt  example.txt
->>> git switch master
+
+$ git switch master
 Switched to branch 'master'
->>> ls
+
+$ ls
 example.txt
 ```
 
@@ -68,11 +71,13 @@ When we change branches, git looks up what files it needs to get and simply *rep
 
 ```bash
 # Look up the ID of my_new_branch
->>> cat .git/refs/heads/my_new_branch 
+$ cat .git/refs/heads/my_new_branch 
 1359962e527f4ab2c15c7703b233fb4e8a0afb83
->>> cat .git/refs/heads/master
+
+$ cat .git/refs/heads/master
 c26f7174f47f0781a8c4f83229d0c50b79a204c0
->>> tree .git/objects # The actual files
+
+$ tree .git/objects # The actual files
 .git/objects
 ├── 10
 │   └── ba6b215ed96b95bef8d9e605b45fffe24efa95
@@ -106,15 +111,16 @@ c26f7174f47f0781a8c4f83229d0c50b79a204c0
 When we are happy with the extra code we wrote on my_new_branch we want to *merge* it into master
 
 ```bash
->>> git switch master # Switch to master
->>> git merge my_new_branch # Merge my_new_branch into master
+$ git switch master # Switch to master
+$ git merge my_new_branch # Merge my_new_branch into master
 Updating c26f717..1359962
 Fast-forward
  example.txt  | 2 ++
  example2.txt | 1 +
  2 files changed, 3 insertions(+)
  create mode 100644 example2.txt
->>> ls
+
+$ ls
 example2.txt  example.txt
 ```
 
@@ -127,14 +133,14 @@ example2.txt  example.txt
 Now that we are done with the branch, we can delete it
 
 ```bash
->>> git branch -d my_new_branch
+$ git branch -d my_new_branch
 Deleted branch my_new_branch (was 1359962)
 ```
 
 This only deletes the reference - the file found in .git
 
 ```bash
-ls .git/refs/heads
+$ ls .git/refs/heads
 master
 ```
 

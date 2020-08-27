@@ -23,7 +23,7 @@ outputs: ["Reveal"]
 `git status` gives us information about the current *state* of git
 
 ```bash
->>> git status
+$ git status
 On branch master
 
 No commits yet
@@ -46,7 +46,7 @@ Create a new file named example.txt and write some text
 Now we have some text - run `git status` again
 
 ```bash
->>> git status
+$ git status
 
 On branch master
 
@@ -66,8 +66,8 @@ We have a new *untracked* file - untracked means git has not added it to it's da
 Let's track the file
 
 ```bash
->>> git add example.txt
->>> git status
+$ git add example.txt
+$ git status
 On branch master
 
 No commits yet
@@ -86,7 +86,7 @@ We need to provide a commit message
 A good commit message is a helper for yourself if you ever need to go back in time!
 
 ```bash
->>> git commit
+$ git commit
 ```
 
 ---
