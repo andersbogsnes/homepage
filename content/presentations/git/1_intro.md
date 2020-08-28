@@ -30,7 +30,7 @@ It is a must for working with code in this day and age
 
 ---
 
-## Exercise - 30 seconds
+## Exercise
 
 Create an empty directory we can work with
 

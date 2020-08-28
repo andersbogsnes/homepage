@@ -23,7 +23,7 @@ Identifying the correct datatypes and passing them to `pd.read_csv` can save a l
 
 Fileformats such as parquet will store the datatypes as metadata, but CSV's are text.
 
-Remember, categorical and string are both datatypes in pandas! 
+Remember, categorical and string are both datatypes in pandas!
 Check the [documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html#basics-dtypes)!
 
 ---
