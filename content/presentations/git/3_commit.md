@@ -35,7 +35,7 @@ Notice it gives us an indication of what our next step might be
 
 ---
 
-### Exercise - 30s
+### Exercise
 
 Create a new file named example.txt and write some text
 
@@ -119,7 +119,7 @@ Now that we have a file under version control, let's change it
 
 ---
 
-### Exercise - 30s
+### Exercise
 
 - Update your example.txt with some additional text
 - Add your new changes - don't commit

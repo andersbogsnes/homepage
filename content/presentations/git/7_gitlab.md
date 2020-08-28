@@ -109,7 +109,7 @@ $ git clone git@gitlab.com:andersbogsnes/calculator.git
 
 ---
 
-## Exercise - 5 mins
+## Exercise
 
 One person
 
