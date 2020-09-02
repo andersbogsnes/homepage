@@ -14,7 +14,7 @@ outputs: ["Reveal"]
 ## Hello World
 
 ```bash
->>> docker run hello-world
+$ docker run hello-world
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
@@ -43,10 +43,11 @@ For more examples and ideas, visit:
 
 ```bash
 # Remember the -it - it means "I want a terminal"
->>> docker run -it python:3.8-slim
+$ docker run -it python:3.8-slim
 Python 3.8.3 (default, Jun  9 2020, 17:49:41)
 [GCC 8.3.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
+
 >>> print("hello world")
 hello world
 ```
@@ -73,6 +74,11 @@ A running instance of an Image
 
 ```bash
 docker run -p 5432:5432 postgres
+```
+
+---
+
+```bash
 Error: Database is uninitialized and superuser password is not specified.
        You must specify POSTGRES_PASSWORD to a non-empty value for the
        superuser. For example, "-e POSTGRES_PASSWORD=password" on "docker run".

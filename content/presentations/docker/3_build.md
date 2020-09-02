@@ -40,7 +40,7 @@ COPY index.html /usr/share/nginx/html/index.html
 Now we can `build` the `Dockerfile` and create an **image**
 
 ```bash
->>> docker build -t test_nginx .
+$ docker build -t test_nginx .
 Sending build context to Docker daemon  3.072kB
 Step 1/2 : FROM nginx
  ---> 2622e6cca7eb
@@ -63,8 +63,8 @@ Successfully tagged test_nginx:latest
 We can add a version tag to our previous build
 
 ```bash
->>> docker tag test_nginx:latest test_nginx:0.1.0
->>> docker images
+$ docker tag test_nginx:latest test_nginx:0.1.0
+$ docker images
 docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 test_nginx          0.1.0               01df86f8a47f        7 minutes ago       132MB

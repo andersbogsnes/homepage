@@ -125,7 +125,7 @@ services:
 
 ---
 
-## Exercise - 5 mins
+## Exercise
 
 - Create a new folder nginx
 - Create an index.html file in that folder
@@ -253,7 +253,7 @@ This will wait until the container has started - **not until the application ins
 
 ---
 
-## Exercise - 10 min
+## Exercise
 
 Write a python application to insert the CSV you downloaded previously into the database
 
@@ -265,7 +265,7 @@ Write a python application to insert the CSV you downloaded previously into the 
 
 ---
 
-## Exercise - 10 mins
+## Exercise
 
 - Write a Dockerfile for the application
 - Add it to the docker-compose

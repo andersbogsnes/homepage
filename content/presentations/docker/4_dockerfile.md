@@ -85,7 +85,7 @@ Notice the syntax - this makes it safer to parse
 We can override the CMD by passing the command we want to run
 
 ```bash
->>> docker run -it python:3.8-slim /bin/bash
+$ docker run -it python:3.8-slim /bin/bash
 root@2e321b156c7b:/# 
 ```
 
@@ -115,7 +115,7 @@ WORKDIR /app
 
 ---
 
-## Exercise - 10 mins
+## Exercise
 
 - Create a new folder named `db`
 - Find the postgres docker image [docs](https://hub.docker.com/_/postgres)

@@ -28,13 +28,5 @@ outputs: ["Reveal"]
 
 {{< figure src=https://www.docker.com/sites/default/files/d8/2018-11/docker-containerized-appliction-blue-border_2.png height=500 attr=https://www.docker.com/resources/what-container >}}
 
----
-
-
-docker build
-
-docker push
-
-docker-compose
 
 {{% /section %}}

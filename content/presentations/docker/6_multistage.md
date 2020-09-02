@@ -57,6 +57,30 @@ Since the layers are read-only, we can't delete anything from a previous layer
 
 ---
 
+## The build context
+
+Did you notice this line?
+
+```bash
+$ docker build -t test_nginx .
+Sending build context to Docker daemon  3.072kB
+```
+
+---
+
+Docker sends the contents of your as a zip file to the `Docker daemon` - the thing that actually does `docker`
+
+If this gets big, it can slow down your builds and make them much bigger - everything that is sent gets included.
+
+---
+
+## The solution: .dockerignore
+
+- If you have large files you don't need in your build, you can add them to `.dockerignore`, much like a `.gitignore`
+- They're not quite the same, so if it's not doing what you want - look up the [docs](https://docs.docker.com/engine/reference/builder/#dockerignore-file)
+
+---
+
 ## Multi-stage builds
 
 Multi-stage builds means passing **artifacts** between stages in a Dockerfile
@@ -90,7 +114,7 @@ CMD ["python", "run.py"]
 
 ---
 
-## Exercise - 15 mins
+## Exercise
 
 - Check how big your docker-compose app is (`docker images`)
 - Implement multi-stage in the app
