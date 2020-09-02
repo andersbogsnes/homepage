@@ -41,28 +41,4 @@ We are a startup, so we don't have much data. Luckily, we found a website that s
 
 http://insideairbnb.com/
 
----
-
-
-building dataset
-    - Include data download
-
-preprocessing
-    - Setting up pipelines
-    - Custom transformers
-
-training
-    - Hyperparam search
-    - model selection
-    - feature selection
-
-evaluating
-    - Plotting
-
-CLI
-    - argparse
-    - click
-
-tox
-
 {{% /section %}}

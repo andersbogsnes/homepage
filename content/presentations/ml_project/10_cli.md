@@ -91,4 +91,13 @@ if __name__ == "__main__":
     cli()
 ```
 
+---
+
+Now we can do something like this.
+
+```bash
+$ my_cli train --cv 5
+```
+
+
 {{% /section %}}
