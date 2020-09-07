@@ -1,9 +1,8 @@
 ---
 title: "Setting up an ML Project"
 description: "Working through an ML Project from scratch"
-date: 2020-07-30T17:55:21+02:00
+date: 2020-09-07T10:00:00+02:00
 outputs: ["Reveal"]
-draft: true
 ---
 
 {{< slide background-image=/images/typing.jpg >}}
