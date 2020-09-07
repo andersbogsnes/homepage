@@ -34,6 +34,8 @@ During the EDA process, you should have been thinking about potential preprocess
 
 You should also have some ideas for feature engineering that could be beneficial.
 
+---
+
 ## Exercise
 
 - Write a PriceForecasterDataset class inheriting from FileDataset

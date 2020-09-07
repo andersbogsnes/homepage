@@ -58,11 +58,4 @@ class MyCustomTransformer(BaseEstimator, TransformerMixin):
 - Transform the data using the learned parameter
 - Make sure not to modify `x` directly
 
----
-
-## Exercise
-
-- Start building your feature pipeline
-- Are there any custom transformers we need to write?
-
 {{% /section %}}
