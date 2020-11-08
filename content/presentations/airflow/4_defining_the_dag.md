@@ -1,5 +1,5 @@
 ---
-weight: 30
+weight: 40
 outputs: ["Reveal"]
 ---
 
@@ -44,7 +44,7 @@ Airflow includes many such tasks - they are called *Operators*
 ---
 
 ```python
-from airflow.operators import BashOperator
+from airflow.operators.bash_operator import BashOperator
 
 t1 = BashOperator(
     task_id='print_hello_world',
@@ -56,7 +56,7 @@ t1 = BashOperator(
 ---
 
 ```python
-from airflow.operators import PythonOperator
+from airflow.operators.python_operator import PythonOperator
 
 def hello_world():
     print("Hello World from Python")
@@ -74,6 +74,7 @@ t2 = PythonOperator(
 from airflow.operators.docker_operator import DockerOperator
 
 t3 = DockerOperator(
+    task_id="docker_hello_world",
     image="hello-world",
     dag=dag
 )
@@ -91,5 +92,8 @@ t1 >> t2 >> t3
 
 ```
 
-{{% /section %}}
+## The DAG Bag
 
+Airflow automatically loads all DAGs from the `dag` folder in `$AIRFLOW_HOME`. 
+
+{{% /section %}}

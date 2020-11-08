@@ -16,7 +16,6 @@ Airflow is an open source *Orchestrator* first developed at Airbnb and later don
 
 Airflow handles
 
-
 - authoring
 - monitoring
 - scheduling
