@@ -92,8 +92,26 @@ t1 >> t2 >> t3
 
 ```
 
+---
+
 ## The DAG Bag
 
 Airflow automatically loads all DAGs from the `dag` folder in `$AIRFLOW_HOME`. 
+
+
+---
+
+## Exercise
+
+Make a DAG in the dag folder with the following tasks
+
+- Write a python function which takes a text
+- The function should take a keyword arg `n` which specifies how many times to repeat the text
+- The function should write the input text `n` times to a local file in `/tmp`
+- Create a DAG
+- Create a PythonOperator to run the function
+- Create a BashOperator to read the results of the file
+- Add them to the DAG
+- Execute them in the UI
 
 {{% /section %}}
