@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 90
 outputs: ["Reveal"]
 ---
 
@@ -49,5 +49,17 @@ Microsoft tried to introduce the WASB protocol, which is the legacy way of inter
 This is reflected in Airflow, as there is the WASB connection and the WASB hooks
 
 Feel free to try them, but with our preferred approach, we don't need to use Airflow hooks directly
+
+---
+
+# Exercise
+
+Write a DAG that downloads a month's worth of data from [Inside Airbnb](http://insideairbnb.com/get-the-data.html), unzips it and uploads it 
+to your storage account.
+
+- Find an operator that helps with the uploading of the file to WASB
+- Setup a connection id in the Airflow UI
+- Schedule it to run only once [hint](https://airflow.apache.org/docs/stable/dag-run.html)
+- Some helpful bash commands - wget, gunzip
 
 {{% /section %}}
