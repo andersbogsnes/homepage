@@ -6,4 +6,4 @@ outputs: ["Reveal"]
 draft: true
 ---
 
-{{< slide background-image="/images/airflow.png" background-size=60% >}}
+{{< slide background-image="/images/airflow/airflow.png" background-size=60% >}}

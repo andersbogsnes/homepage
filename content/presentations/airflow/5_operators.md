@@ -7,7 +7,7 @@ outputs: ["Reveal"]
 
 ## The Operator
 
-Operators in Airflow represent a task
+Operators in Airflow represent a task that Airflow will run
 
 ---
 
@@ -21,5 +21,13 @@ Operators in Airflow represent a task
 
 ---
 
+PythonOperator and BashOperator are two examples of tasks we have already used, but Airflow comes with many operators built in.
+
+---
+
+For a complete list:
+
+- https://airflow.apache.org/docs/stable/_api/airflow/operators/index.html
+- https://airflow.apache.org/docs/stable/_api/airflow/contrib/operators/index.html
 
 {{% /section %}}

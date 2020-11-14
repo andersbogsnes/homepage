@@ -5,14 +5,18 @@ outputs: ["Reveal"]
 
 {{% section %}}
 
-{{< slide background-image=/images/azure_blob_storage.png background-size=60% >}}
+{{< slide background-image=/images/airflow/azure_blob_storage.png background-size=60% >}}
 
 ---
 
 # Working with Azure Blob Storage
 
+---
+
 Azure Blob Storage is basically the same as a network drive that is attached to the internet instead of being mounted to your
 computer
+
+---
 
 This is important for two main reasons
 
@@ -28,7 +32,6 @@ Setup a new folder and new venv
 Start by installing the azure python SDK
 
 ```bash
-
 pip install azure-storage-blob
 ```
 
@@ -40,7 +43,7 @@ pip install azure-storage-blob
 - The Container
 - The Blob
 
-{{< figure src=/images/blob_storage_model.png class=fragment >}}
+{{< figure src=/images/airflow/blob_storage_model.png class=fragment >}}
 
 ---
 
@@ -156,6 +159,5 @@ In your assigned storage accounts, upload and download a test file
 - Delete your container
 
 ---
-
 
 {{% /section %}}

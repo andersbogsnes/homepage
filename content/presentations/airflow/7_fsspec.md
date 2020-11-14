@@ -29,7 +29,6 @@ pip install fsspec adlfs
 
 ---
 
-
 ## Upload a file
 
 ```python

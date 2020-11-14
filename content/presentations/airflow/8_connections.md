@@ -23,6 +23,8 @@ Airflow provides an abstraction, by storing that sensitive connection info encry
 
 ## Adding a connection
 
-In the UI, the admin can add a Connection to any backend - Airflow supports a number out of the box.
+In the UI, the admin can add a Connection to any backend - Airflow supports a number out of the box. For each operator we want to use, we generally need to add a connection.
+
+{{< figure src=/images/airflow/connection_view.png >}}
 
 {{% /section %}}

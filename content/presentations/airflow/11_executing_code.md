@@ -95,7 +95,7 @@ That way our airflow instance can be a small LocalExecutor and the heavy work is
 
 ## Exercise
 
-Build a docker image to calculate beds per person in the Airbnb Data. 
+Build a docker image to calculate beds per person in the Airbnb Data.
 We want to calculate this by dividing the `accomodates` column by the `beds` column
 
 - Read the data from your datalake
@@ -110,6 +110,10 @@ We want to calculate this by dividing the `accomodates` column by the `beds` col
 
 The simplest way to run an image is to use the [DockerOperator](https://airflow.apache.org/docs/stable/_api/airflow/operators/docker_operator/index.html)
 
+But how do we get access to configuration from Airflow inside the image?
+
+<p class="fragment">Any runtime config must be passed as env to the container instance</p>
+
 ---
 
 ## Grabbing connections
@@ -123,15 +127,22 @@ To use the connections defined in the UI, we can use the BaseHook class
 ```
 
 <p class="fragment">We can write our own Operator inheriting from DockerOperator if we want to run this inside our Operator instance</p>
+<p class="fragment">:warning: Remember, don't write code that runs every time the DAG is parsed!</p>
 
 ---
 
 ## Variables
 
-In addition to connections, we can also use the Variables backend to store configuration. This is simpler to use and can be accessed in jinja templating
+In addition to connections, we can also use the Variables backend to store configuration. This is simpler to use and can be accessed in jinja templating.
 
 ```jinja
-{{ var.variable_name.json.json_property }}
+{{ var.variable_name }}
+```
+
+If you have a JSON stored in your variable, Airflow can automatically convert it
+
+```jinja
+{{ var.json.variable_name.json_property }}
 ```
 
 ---
@@ -140,4 +151,4 @@ In addition to connections, we can also use the Variables backend to store confi
 
 We can use Jinja to dynamically generate commands and configuration, such as the environment variables passed to our docker image
 
-{{% /section }}
+{{% /section %}}

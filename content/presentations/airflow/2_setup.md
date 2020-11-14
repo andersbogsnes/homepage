@@ -27,17 +27,20 @@ Airflow puts its files into `$AIRFLOW_HOME`, so set that or use the default, `~/
 export AIRFLOW_HOME=~/where/i/want
 
 airflow initdb
-
 ```
 
 ---
 
-Start two new terminals to run the webserver and scheduler
+## Start two new terminals
+
+### run the webserver
 
 ```bash
 export AIRFLOW_HOME=~/where/i/want
 airflow webserver
 ```
+
+### run the scheduler
 
 ```bash
 export AIRFLOW_HOME=~/where/i/want

@@ -36,4 +36,21 @@ with dag:
     t1 >> wait_10_mins >> t2
 ```
 
+---
+
+## Exercise
+
+Add a HttpSensor to the previous workflow that will cause the pipeline to wait if the file is not present
+
+---
+
+## Solution
+
+```python
+    file_available = HttpSensor(http_conn_id="airbnb_file",
+                                task_id="check-is-available",
+                                endpoint="denmark/hovedstaden/copenhagen/2020-10-27/data/listings.csv.gz"
+                                )
+```
+
 {{% /section %}}
