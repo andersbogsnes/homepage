@@ -115,20 +115,19 @@ Let's upload a file named `test.csv` to the container
 ---
 
 ```python
-from azure.blob.storage import BlobClient
+from azure.blob.storage import BlobServiceClient
 
-# Credentials is whatever credentials of the above you are using
->>> client = BlobClient("https://myteststorage.blob.core.windows.net", 
-                        container_name="raw",
-                        blob_name="test.csv",
-                        credential="mytoken")
->>> client.exists()
+# Credentials is whatever credentials type you are using
+>>> client = BlobServiceClient("https://myteststorage.blob.core.windows.net", credential="mytoken")
+>>> container_client = client.create_container("raw") # client.get_container("raw")
+>>> blob_client = container_client.get_blob_client("myfilename.txt")
+>>> blob_client.exists()
 False
 
 >>> with open("test.csv", mode="rb") as f:
-...    client.upload_blob(f)
+...    blob_client.upload_blob(f)
 
->>> client.exists()
+>>> blob_client.exists()
 True
 ```
 
@@ -159,5 +158,36 @@ In your assigned storage accounts, upload and download a test file
 - Delete your container
 
 ---
+
+## Solution
+
+```python
+from azure.storage.blob import BlobServiceClient
+from azure.core.exceptions import ResourceExistsError
+
+with open("test_file.txt", mode="w") as f:
+    f.write("Hello from my test file")
+
+client = BlobServiceClient(
+    account_url="https://andersdatalake.blob.core.windows.net",
+    credential="mytoken",
+)
+
+try:
+    container = client.create_container("raw")
+except ResourceExistsError:
+    container = client.get_container_client("raw")
+
+blob = container.get_blob_client("anders_demo.txt")
+
+with open("test_file.txt", mode="rb") as f:
+    blob.upload_blob(f, overwrite=True)
+
+with open("test_file2.txt", mode="wb") as f:
+    stream = blob.download_blob()
+    f.write(stream.readall())
+
+container.delete_container()
+```
 
 {{% /section %}}

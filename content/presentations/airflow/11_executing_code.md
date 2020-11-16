@@ -85,9 +85,17 @@ a long time. Still works great, but requires dedicated machines.
 
 ## Preferred approach
 
-In general, the preferred approach is to run docker images for each task to the extent that is possible. It means you don't have to worry about installing all the airflow dependencies in each worker, and let's you write each task's logic independently.
+In general, the preferred approach is to run docker images for each task to the extent that is possible.
+
+---
+
+It means you don't have to worry about installing all the airflow dependencies in each worker, and lets you write each task's logic independently.
+
+---
 
 These images can run on a Kubernetes Cluster, or managed container runtimes like Azure Container Instances, Amazon ECS or Google Cloud Run.
+
+---
 
 That way our airflow instance can be a small LocalExecutor and the heavy work is done by a managed service.
 
@@ -96,7 +104,7 @@ That way our airflow instance can be a small LocalExecutor and the heavy work is
 ## Exercise
 
 Build a docker image to calculate beds per person in the Airbnb Data.
-We want to calculate this by dividing the `accomodates` column by the `beds` column
+We want to calculate this by dividing the `accommodates` column by the `beds` column
 
 - Read the data from your datalake
 - Perform the calculation
@@ -135,6 +143,10 @@ To use the connections defined in the UI, we can use the BaseHook class
 
 In addition to connections, we can also use the Variables backend to store configuration. This is simpler to use and can be accessed in jinja templating.
 
+![variables](/images/airflow/add_variable.png)
+
+---
+
 ```jinja
 {{ var.variable_name }}
 ```
@@ -147,8 +159,70 @@ If you have a JSON stored in your variable, Airflow can automatically convert it
 
 ---
 
-## Jinja templated commands
+## Using the Docker Operator
 
-We can use Jinja to dynamically generate commands and configuration, such as the environment variables passed to our docker image
+We can use Jinja to dynamically generate commands and configuration, such as the environment variables passed to our docker image.
+
+```python
+from airflow.operators import DockerOperator
+with dag:
+    ...
+    transform_task = DockerOperator(
+        task_id="transform_data",
+        image="test_upload:latest",
+        command="transform -d 2020-06-26",
+        environment={
+            "ACCOUNT_KEY": "{{ var.json.storage_account.account_key }}",
+            "ACCOUNT_NAME": "{{ var.json.storage_account.account_name }}"
+        })
+```
+
+---
+
+This works, because we've built the image locally - we want to be able to access the image from anywhere
+
+<p class="fragment">We need to push the image to a container registry</p>
+
+---
+
+## Pushing to a registry
+
+Pushing to a docker registry is simple - we need to have docker login first
+
+```bash
+docker login <login server>
+```
+
+---
+
+Now we can tag our image with the name of the registry
+
+```bash
+docker build -t <login server>/<name of repo>/<image name>:<image tag> .
+```
+
+---
+
+We can now push the tagged image
+
+```bash
+docker push <login server>/<name of repo>/<image name>:<image tag>
+```
+
+Now that image ais available to anyone who can log in to your registry
+
+---
+
+## Exercise
+
+Now we have a private registry set up, Airflow needs a connection to run our DockerOperator
+
+- Create a connection in the Airflow connections UI
+- Set the DockerOperator to use that connection id
+- Delete the image from local 
+    - `docker rmi <name_of_image>`
+- Try to rerun the pipeline with the pushed image!
+
+
 
 {{% /section %}}

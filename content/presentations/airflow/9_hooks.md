@@ -30,11 +30,11 @@ hook.bulk_load("mytable", "mydata.csv")
 
 ---
 
-## Using Hooks with Azure Blob Storage
+## :warning: Using Hooks with Azure Blob Storage
 
 One of the current issue with Azure Blob Storage SDKs, is that Microsoft recently decided to implement breaking changes to the Blob Storage API.
 
-Downstream, there is still plenty of work left to do to update libraries to work with this breaking change.
+<p class="fragment">Downstream, there is still plenty of work left to do to update libraries to work with this breaking change.</p>
 
 ---
 

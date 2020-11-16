@@ -13,9 +13,9 @@ outputs: ["Reveal"]
 
 A sensor is an operator that runs continously, succeeding only when a condition is met.
 
-These can be used for any task that needs to wait on some external input.
+<p class="fragment">These can be used for any task that needs to wait on some external input.</p>
 
-Could be a file landing on a FTP server or some data to land in a database or just wait 10 mins before proceeding.
+<p class="fragment">Could be a file landing on a FTP server or some data to land in a database or just wait 10 mins before proceeding.</p>
 
 ---
 
