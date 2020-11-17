@@ -115,7 +115,7 @@ Let's upload a file named `test.csv` to the container
 ---
 
 ```python
-from azure.blob.storage import BlobServiceClient
+from azure.storage.blob import BlobServiceClient
 
 # Credentials is whatever credentials type you are using
 >>> client = BlobServiceClient("https://myteststorage.blob.core.windows.net", credential="mytoken")
