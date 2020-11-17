@@ -136,11 +136,11 @@ True
 ## Downloading Data
 
 ```python
->>> client.exist()
+>>> blob_client.exist()
 True
 
 >>> with open("local_file.csv", mode="wb") as f:
-...     stream = client.download_blob()
+...     stream = blob_client.download_blob()
 ...     f.write(stream.readall())
 
 ```
