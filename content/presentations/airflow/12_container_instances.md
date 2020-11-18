@@ -20,7 +20,7 @@ Luckily, Airflow already has built in support for running Azure Container Instan
 
 ---
 
-## Exercise
+## Exercise 9
 
 We need to replace our DockerOperator with the AzureContainerInstance
 

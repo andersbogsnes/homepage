@@ -147,7 +147,7 @@ True
 
 ---
 
-## Exercise
+## Exercise 2
 
 In your assigned storage accounts, upload and download a test file
 
@@ -159,7 +159,7 @@ In your assigned storage accounts, upload and download a test file
 
 ---
 
-## Solution
+## Solution 2
 
 ```python
 from azure.storage.blob import BlobServiceClient

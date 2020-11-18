@@ -107,7 +107,7 @@ Airflow automatically loads all DAGs from the `dag` folder in `$AIRFLOW_HOME`.
 
 ---
 
-## Exercise
+## Exercise 1
 
 Make a DAG in the dag folder with the following tasks
 
@@ -122,7 +122,7 @@ Make a DAG in the dag folder with the following tasks
 
 ---
 
-## Solution
+## Solution 1
 
 ```python
 from airflow import DAG

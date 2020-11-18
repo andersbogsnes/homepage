@@ -38,13 +38,13 @@ with dag:
 
 ---
 
-## Exercise
+## Exercise 5
 
 Add a HttpSensor to the previous workflow that will cause the pipeline to wait if the file is not present
 
 ---
 
-## Solution
+## Solution 6
 
 ```python
     file_available = HttpSensor(http_conn_id="airbnb_file",

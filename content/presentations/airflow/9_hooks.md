@@ -54,7 +54,7 @@ Airflow currently implements the legacy method using WASB connection and the WAS
 
 ---
 
-# Exercise
+# Exercise 4
 
 Write a DAG that downloads a month's worth of data from [Inside Airbnb](http://insideairbnb.com/get-the-data.html), unzips it and uploads it 
 to your storage account.
@@ -66,7 +66,7 @@ to your storage account.
 
 ---
 
-# Solution
+# Solution 4
 
 ```python
 from airflow import DAG

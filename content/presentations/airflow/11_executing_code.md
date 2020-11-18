@@ -101,7 +101,7 @@ That way our airflow instance can be a small LocalExecutor and the heavy work is
 
 ---
 
-## Exercise
+## Exercise 7
 
 Build a docker image to calculate beds per person in the Airbnb Data.
 We want to calculate this by dividing the `accommodates` column by the `beds` column
@@ -213,7 +213,7 @@ Now that image ais available to anyone who can log in to your registry
 
 ---
 
-## Exercise
+## Exercise 8
 
 Now we have a private registry set up, Airflow needs a connection to run our DockerOperator
 

@@ -93,14 +93,14 @@ With an fsspec-compatible Filesystem, we can do many of the things we expect fro
 
 ---
 
-## Exercise
+## Exercise 3
 
 - Upload your data from the previous exercise using fsspec instead
 - Delete the data using fsspec
 
 ---
 
-## Solution
+## Solution 3
 
 ```python
 import fsspec
