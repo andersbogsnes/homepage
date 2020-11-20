@@ -16,6 +16,7 @@ HTTP (Hypertext Transfer Protocol) is the backbone of the internet. Every time y
 
 ---
 
+
 ### Request - Response cycle
 
 HTTP defines how messages are passed between a client - your machine - and the webserver.
@@ -45,10 +46,36 @@ HTTP/1.1 200 OK
 
 If we look at our request, the first part is called the HTTP verb - what action do we want to perform
 
-In the case of fetching google's homepage, we asked to `GET` some data from google
+In the case of fetching google's homepage, we asked to `GET` some data from google - there are a number of others, but we will focus on those that get used most commonly:
+
+- GET
+- HEAD
+- POST
+- PUT
+- DELETE
+- PATCH
 
 ---
 
+## GET
 
+The GET request simply requests a resource. Should only ever retrieve data
 
+---
+
+## HEAD
+
+A GET that only returns the header and not the body. Commonly used for health checks
+
+---
+
+## POST
+
+Submit a resource to the server. Usually used to change state on the server, e.g create a new resource
+
+---
+
+## PUT
+
+Submit a resoruce intended to replace an existing resource. 
 {{% /section %}}
