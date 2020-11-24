@@ -14,7 +14,7 @@ outputs: ["Reveal"]
 Let's write some code - install fastapi + dependencies in a new virtualenv
 
 ```bash
-pip install fastapi uvicorn
+pip install fastapi[all]
 ```
 
 ---
@@ -79,9 +79,11 @@ Try navigating to http://127.0.0.1:8000/hello/foo
 
 The mapped function now takes a named argument, which FastAPI will give us as a variable and we can use it in our function.
 
-Note that it is matched by name, so the placeholder name and the function name must be the same
+:warning: Note that it is matched by name, so the placeholder name and the function name must be the same
 
 ---
+
+## Multiple levels
 
 ```python
 @api.get("/hello/{name}/{greeting}")
@@ -91,5 +93,216 @@ def hello_world_name_and_greeting(name: str, greeting: str):
 
 ---
 
+## Posting data
+
+One of the features of FastAPI is using pydantic to do data validation of anything coming into it.
+
+---
+
+### Pydantic
+
+Pydantic is a FastAPI dependency, and is used to do data validation using python typehinting
+
+Let's define a User schema
+
+```python
+from pydantic import BaseModel
+
+class UserSchema(BaseModel):
+    username: str
+    email: str
+```
+
+---
+
+We can now use that in a `post` request handler
+
+```python
+@api.post("/user")
+def create_user(user: UserSchema):
+    return "Thank you new user"
+```
+
+---
+
+### Try it out
+
+How do we make a POST request?
+
+---
+
+#### OpenAPI
+
+Navigate to `127.0.0.1:8000/docs`
+
+FastAPI automatically creates an OpenAPI spec for the API
+
+Find the endpoint and `Try it out`
+
+<p class="fragment">Notice that any docstrings you include in your handler function gets included here</p>
+
+---
+
+#### Curl
+
+On the commandline we can use `curl -X POST localhost:8000/user -d '{"username": "Anders", "email": "andersbogsnes@gmail.com"}'`
+
+---
+
+#### Pycharm
+
+Pycharm has a http request feature - Right-click -> New File -> HTTP Request.
+
+The syntax for a POST looks like this:
+
+```https
+POST http://localhost:8000/user
+Content-Type: application/json
+
+{"username":  "anders", "email":  "andersbogsnes@gmail.com"}
+```
+
+---
+
+### JSON
+
+Note the data payload used here is JSON format
+
+The lingua franca of APIs these days is JSON - **J**ava**S**cript **O**bject **N**otation
+
+---
+
+JSON is written using two elements
+
+- Array (equivalent to python list)
+- Key: Value mapping (equivalent to python dict)
+
+---
+
+The example data is a key-> value mapping
+
+```json
+{"username": "Anders", "email": "andersbogsnes@gmail.com"}
+```
+
+---
+
+It could also be an array of multiple users:
+
+```json
+[
+    {"username": "Anders", "email": "andersbogsnes@gmail.com"},
+    {"username": "Tom", "email": "tomhanks@gmail.com"}
+]
+```
+
+---
+
+## Response Model
+
+We can return a dictionary and FastAPI will convert it to JSON and return it
+
+```python
+@api.post("/user")
+def create_new(user: UserSchema):
+    return {
+        "name": user.username,
+        "email": user.email
+    }
+```
+
+<p class="fragment">Using pydantic to see what data is available!</p>
+
+---
+
+We can also define a response model to validate the outgoing data - maybe we only want the username to be returned?
+
+```python
+
+class UserOutSchema(BaseModel):
+    email: str
+
+@api.post("/user", response_model=UserOutSchema)
+def create_new_user(user: UserSchema):
+    return {
+        "username": user.username, # What happens if the key is 'name'?
+        "email": user.email
+    }
+```
+
+---
+
+## Validation
+
+The typehints we've used in pydantic helps to validate the data, but `str` is generic - anything can be a string.
+
+Pydantic comes with built-in validators we can use. Let's validate that the email is actually an email
+
+---
+
+Change the UserSchema to be of type EmailStr instead
+
+```python
+from pydantic import EmailStr, BaseModel
+
+class UserSchema(BaseModel):
+    username: str
+    email: EmailStr
+```
+
+<p class="fragment">What happens if you try to post a non-email?</p>
+
+---
+
+## Exercise 1
+
+Let's build an AirBnB-alike API.
+
+- Write an ListingSchema with username, email, address and price
+- Write a ListingOutSchema with username, address and price
+- Write a POST endpoint to submit a new listing
+  - POST to "/listing"
+- Write a GET endpoint with an id to get a listing - hardcode a dummy listing for now
+  - GET to "/listing/0"
+- Test it out!
+
+---
+
+## Solution
+
+```python
+from fastapi import FastAPI
+from pydantic import BaseModel, EmailStr
+
+
+class ListingOutSchema(BaseModel):
+    username: str
+    address: str
+    price: float
+
+
+class ListingSchema(ListingOutSchema):
+    email: EmailStr
+
+
+api = FastAPI()
+
+LISTINGS = [{
+    "email": "test@test.com",
+    "username": "test",
+    "address": "Nørrebrogade 20",
+    "price": 700
+}]
+
+
+@api.post("/listing", response_model=ListingOutSchema)
+def create_new_listing(listing: ListingSchema):
+    return listing
+
+
+@api.get("/listing/{listing_id}", response_model=ListingOutSchema)
+def get_listing(listing_id: int):
+    return LISTINGS[listing_id]
+```
 
 {{% /section %}}

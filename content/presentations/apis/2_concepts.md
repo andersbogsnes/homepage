@@ -35,43 +35,37 @@ The requested resource is sent back to the client in a representation - usually 
 
 ---
 
-### The Request - Response cycle
+## The Request - Response cycle
 
 ---
 
 HTTP is a protocol that defines how messages are passed between a client - your machine - and the webserver.
 
-For example, the message for requesting google.com from your browser looks like this:
+![Request Response](/images/apis/request_response.png)
 
-```
+---
+
+For example, the message for requesting Google's homepage looks like this:
+
+```https
 GET / HTTP/1.1
 Host: www.google.com
 ```
 
 ---
 
-### Response
+### Methods
 
-Google's webserver will respond to our Request with it's own message
-
+```https
+GET # Method / # Resource HTTP/1.1 # Protocol
 ```
-HTTP/1.1 200 OK
 
-(google homepage html)
-```
+- What action do we want to perform?
+- We asked to `GET` the `/` resource from google.
 
 ---
 
-### Verbs
-
-If we look at our request, the first part is called the HTTP verb - what action do we want to perform
-
-
-In the case of fetching google's homepage, we asked to `GET` some data from google.
-
----
-
-there are a number of others, but we will focus on those that get used most commonly:
+We will focus on the methods that get used most commonly:
 
 - GET
 - HEAD
@@ -82,39 +76,73 @@ there are a number of others, but we will focus on those that get used most comm
 
 ---
 
-## GET
+#### GET
 
 The GET request simply requests a resource. Should only ever retrieve data
 
 ---
 
-## HEAD
+#### HEAD
 
 A GET that only returns the header and not the body. Commonly used for health checks
 
 ---
 
-## POST
+#### POST
 
 Submit a resource to the server. Usually used to change state on the server, e.g create a new resource
 
 ---
 
-## PUT
+#### PUT
 
 Submit a resoruce intended to replace an existing resource. 
 
 ---
 
-## DELETE
+#### DELETE
 
 Delete a given resource from the server
 
 ---
 
-## PATCH
+#### PATCH
 
 Modify part of an existing resource
+
+---
+
+## Response
+
+Google's webserver will respond to our Request with a Response message
+
+```https
+HTTP/1.1 200 OK
+
+<html>...</html>
+```
+
+---
+
+In the Response, the header contains the *protocol* and the *status code*
+
+```https
+HTTP/1.1 # HTTP Protocol 200  OK # Status Code
+```
+
+---
+
+### Status Codes
+
+Status codes are the server's main method of communicating the result of the Request.
+
+There are many status codes with lots of nuance, but a few you might know:
+
+<ul>
+    <li class="fragment">500 - Internal Server Error</li>
+    <li class="fragment">404 - Not Found</li>
+    <li class="fragment">200 - OK</li>
+</ul>
 
 ---
 
@@ -124,7 +152,9 @@ Usually, when you work with HTTP, you're in the browser, asking for webpages.
 
 ---
 
-When you navigate to google.com, your browser does a GET for the website. The response is the text of the website HTML which your browser knows how to render.
+When you navigate to google.com, your browser does a GET for the website.
+
+The Response is the text of the website HTML which your browser knows how to render.
 
 ---
 
