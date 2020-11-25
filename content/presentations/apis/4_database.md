@@ -200,9 +200,14 @@ def create_new_listing(session: Session,
     return listing
 
 
-def get_listing(session: Session, listing_id: int) -> Listing:
-    stmt = sa.select(Listing).where(Listing.id == listing_id)
-    result = session.execute(stmt).scalar()
+def get_listing_by_id(session: Session, listing_id: int) -> Listing:
+    # This uses the special `get` method to lookup by primary key
+    result = session.get(Listing, listing_id)
+
+    # Alternative syntax
+    # stmt = sa.select(Listing).where(Listing.id == listing_id)
+    # result = session.execute(stmt).scalar()
+
     return result
 ```
 
