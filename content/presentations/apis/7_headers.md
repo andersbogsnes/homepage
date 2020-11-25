@@ -34,6 +34,21 @@ Headers are simple key-value pairs passed in HTTP messages and can be found in b
 
 ---
 
-In 
+In FastAPI, it's simple to get header values
+
+```python
+from fastapi import Header
+
+@api.get("/user-agent")
+def get_user_agent(user_agent: str = Header(None)):
+    return f"Your user agent is {user_agent}"
+```
+
+---
+
+The most common header we have to worry about is authentication. A typical usecase is `Bearer Tokens`
+
+The client can send its authentication as a header with the format `Authorization: Bearer mytoken`
+
 
 {{% /section %}}

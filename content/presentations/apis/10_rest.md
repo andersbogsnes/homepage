@@ -24,7 +24,7 @@ The original tenets of REST were:
 - Layered system
 - Code on demand (optional)
 - Uniform interface
- 
+
 ---
 
 ### Client-server architecture
@@ -84,5 +84,9 @@ Just like navigating a webpage, a response should contain data about how to proc
 ---
 
 It is rare to find an API that lives up to REST completely, so *RESTful* is often used to describe APIs that generally stick to REST principles
+
+---
+
+Most modern APIs use HTTP methods, pass data back and forth via JSON (this is not a REST requirement!) and is generally stateless
 
 {{% /section %}}
