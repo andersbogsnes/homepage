@@ -5,6 +5,14 @@ output: ["Reveal"]
 
 {{% section %}}
 
+# Further Reading
+
+- [FastAPI docs](https://fastapi.tiangolo.com/)
+- [Pydantic docs](https://pydantic-docs.helpmanual.io/)
+- [SQLAlchemy docs](https://docs.sqlalchemy.org/en/14/index.html)
+
+---
+
 # Additional Resources
 
 - [REST API Tutorial](https://www.restapitutorial.com/)
