@@ -4,7 +4,6 @@ date: 2020-09-03T10:42:36+02:00
 slug: "featurestores"
 description: "Featurestore - Datascientistens datakatalog"
 keywords: []
-draft: true
 tags: []
 math: false
 toc: true

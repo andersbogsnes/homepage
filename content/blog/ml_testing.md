@@ -2,7 +2,7 @@
 title: "Tester Du?"
 date: 2019-12-11T17:34:12+02:00
 slug: "tester-du"
-description: "Are you testing your ML code?"
+description: "Tester du din Machine Learning kode?"
 keywords: []
 tags: []
 toc: true

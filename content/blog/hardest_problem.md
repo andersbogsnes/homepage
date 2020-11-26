@@ -1,7 +1,7 @@
 ---
 title: "Det sværeste problem i machine learning"
 date: 2020-07-30T17:43:06+02:00
-slug: "deployment"
+slug: "hardest-problem-in-ML"
 description: "Hvordan løser man det sværeste problem i Machine Learning?"
 keywords: []
 toc: true

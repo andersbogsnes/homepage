@@ -1,6 +1,6 @@
 ---
 title: "Modelprocessen i Alm Brand"
-date: 2020-07-30T17:44:51+02:00
+date: 2019-07-30T17:44:51+02:00
 slug: "modelprocessen-i-alm-brand"
 description: "Hvordan bygger vi pipelines til at deploye ML mod"
 keywords: []
