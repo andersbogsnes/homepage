@@ -1,6 +1,6 @@
 ---
 title: "Modelprocessen i Alm Brand"
-date: 2019-07-30T17:44:51+02:00
+date: 2019-01-22T17:44:51+02:00
 slug: "modelprocessen-i-alm-brand"
 description: "Hvordan bygger vi pipelines til at deploye ML mod"
 keywords: []
@@ -8,42 +8,29 @@ toc: true
 tags: []
 ---
 
-I sidste post beskrev vi, hvordan vi har bygget pipelines til at
-automatisere og standardisere vores Advanced Analytics modeller, samt
-deploye dem på vores container platform kaldes "Service Hotellet". Hele
-Processen er illustreret nedenfor, hvor "prod" står for deployet i prod
-på Service Hotellet
+I sidste post beskrev vi, hvordan vi har bygget pipelines til at automatisere og standardisere vores Advanced Analytics modeller, samt deploye dem på vores container platform kaldes "Service Hotellet". Hele Processen er illustreret nedenfor, hvor "prod" står for deployet i prod på Service Hotellet
 
 {{< figure src="/images/Pipeline.png" >}}
 
-Denne post vil gå i yderligere detaljer om hvordan vi har struktureret
-vores værktøjer (venstre og midterste del af figuren) og hvilke fordele
-vi har fået ud af dette
+Denne post vil gå i yderligere detaljer om hvordan vi har struktureret vores værktøjer (venstre og midterste del af figuren) og hvilke fordele vi har fået ud af dette
 
 # Hvad vi opnår
 
-Ved at gå fra batch scoring af modeller til APIer får vi en række
-fordele:
+Ved at gå fra batch scoring af modeller til APIer får vi en række fordele:
 
 - Nem A/B testing
 - Nem skalering - scor kun relevante kunder
 - Portability - alle kan kalde en API
 - Automatisk opgradering af modeller
 
-En af de store gevinster ved en API er realtidsscoring af sine modeller. Realtid tænkes ofte som at være begrænset af DW
-opdateringsfrekvens, men vi indhenter også meget information i løbet af vores samtale med kunden som vi ikke har tilgang til i en batch verden.
+En af de store gevinster ved en API er realtidsscoring af sine modeller. Realtid tænkes ofte som at være begrænset af DW opdateringsfrekvens, men vi indhenter også meget information i løbet af vores samtale med kunden som vi ikke har tilgang til i en batch verden.
+
 Det giver en stor fordel til modellen, hvis vi f.eks. indhenter kundens adresse som vi ikke kendte - eller får at vide hvem de har forsikringer
 hos idag.
 
 # Modeludvikleren
 
-Vores målsætning er at modeludvikleren skal kunne gå fra model til
-deployet API uden at skulle tænke over produktionsætningsdelen af
-processen. Vi har udvalgt og anvendt værktøjer der hjælper med at
-standardiserer interfaces og processer (docker, cookiecutter,
-gitlab-ci). Med disse standardiserede interfaces kan vi opbygge
-deployment processen omkring de antagelser og dermed bruge pipelines til
-at automatisere deploy processen.
+Vores målsætning er at modeludvikleren skal kunne gå fra model til deployet API uden at skulle tænke over produktionsætningsdelen af processen. Vi har udvalgt og anvendt værktøjer der hjælper med at standardiserer interfaces og processer (docker, cookiecutter, gitlab-ci). Med disse standardiserede interfaces kan vi opbygge deployment processen omkring de antagelser og dermed bruge pipelines til at automatisere deploy processen.
 
 Vi arbejder typisk i nogle steps:
 
