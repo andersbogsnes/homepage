@@ -1,7 +1,7 @@
 ---
-title: "Featurestores"
+title: "Featurestores - Skaler din data til datascience"
 date: 2020-09-03T10:42:36+02:00
-slug: ""
+slug: "featurestores"
 description: "Featurestore - Datascientistens datakatalog"
 keywords: []
 draft: true
@@ -9,8 +9,6 @@ tags: []
 math: false
 toc: true
 ---
-
-# Featurestores - Skaler din data til datascience
 
 Featurestoren er et nyt værktøj i værktøjskassen til datascience teams. Uber skrev om sin Featurestore [Michelangelo](https://eng.uber.com/michelangelo-machine-learning-platform/) tilbage i 2017, det samme år som Airbnb begyndte at skrive om sin Featurestore [Zipline](https://medium.com/airbnb-engineering/using-machine-learning-to-predict-value-of-homes-on-airbnb-9272d3d4739d). Der er nu en lang række virksomheder der har indset at
 Featurestores er en central del af deres ML platform - Facebooks [FBLearner](https://engineering.fb.com/core-data/introducing-fblearner-flow-facebook-s-ai-backbone/), Netflix [Metaflow](https://metaflow.org/), Google's [Feast](https://cloud.google.com/blog/products/ai-machine-learning/introducing-feast-an-open-source-feature-store-for-machine-learning) og mange andre. Der er også platforme der leverer *Featurestore-as-a-service* som [Hopsworks](https://www.logicalclocks.com/) og [Tecton](https://www.tecton.ai/) men trenden er helt klart at bygge sit eget.
