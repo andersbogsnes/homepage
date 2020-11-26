@@ -41,7 +41,6 @@ pip install --pre sqlalchemy # For sqlalchemy==1.4
 
 SQLAlchemy lets us declare a Table class that represents a row in our database. To do this, SQLAlchemy needs to generate a Base class to inherit from
 
-
 ```python
 from sqlalchemy.orm import declarative_base
 
@@ -89,7 +88,7 @@ Base.metadata.create_all(engine) # Execute the sql with the engine
 ```
 
 ---
- 
+
 ## Inserting some data
 
 We can now insert some data into the database using our ORM class
@@ -237,5 +236,53 @@ with Session(engine) as session:
     session.delete(listing)
     session.commit()
 ```
+
+---
+
+## Aside: Relationships
+
+One of the nice features of ORM is that we can easily setup relationships between tables, and then any related tables will be available as an attribute on
+the Table class
+
+We won't be using this feature in our very simple API, but it's good to know about
+
+---
+
+A better design for our database might be to have a `Users` table and a `Listings` table and be able to join the two.
+
+It would be nice to be able to access all listings for a given user from a `user` instance:
+
+```python
+user = get_user(user_id=1)
+listings = user.listings
+```
+
+---
+
+SQLALchemy will implement this for us if we specify a `relationship`
+
+---
+
+```python
+from sqlalchemy.orm import relationship
+
+class User(Base):
+    __tablename__ = "user"
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+
+    listings = relationship("Listing", back_populates="user")
+
+class Listing(Base):
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, sa.ForeignKey('user.id'))
+    address = Column(String)
+
+    user = relationship("User", back_populates="listings")
+```
+
+---
+
+Given this declaration, SQLAlchemy will handle the SQL for looking up the associated rows when we do `user.listings`.
 
 {{% /section %}}

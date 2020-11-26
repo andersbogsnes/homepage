@@ -77,9 +77,9 @@ Try navigating to http://127.0.0.1:8000/hello/foo
 
 ---
 
-The mapped function now takes a named argument, which FastAPI will give us as a variable and we can use it in our function.
+The mapped endpoint now takes a named argument, which FastAPI will give us as a variable and we can use it in our function.
 
-:warning: Note that it is matched by name, so the placeholder name and the function name must be the same
+:warning: Note that it is matched by name, so the placeholder name and the function argument name must be the same
 
 ---
 
@@ -95,7 +95,7 @@ def hello_world_name_and_greeting(name: str, greeting: str):
 
 ## Posting data
 
-One of the features of FastAPI is using pydantic to do data validation of anything coming into it.
+One of the features of FastAPI is using the `pydantic` library to do data validation.
 
 ---
 
@@ -211,21 +211,21 @@ def create_new(user: UserSchema):
     }
 ```
 
-<p class="fragment">Using pydantic to see what data is available!</p>
+<p class="fragment">USince we are using pydantic, we can see what data is available on the object!</p>
 
 ---
 
 We can also define a response model to validate the outgoing data - maybe we only want the username to be returned?
 
 ```python
-
 class UserOutSchema(BaseModel):
     email: str
 
 @api.post("/user", response_model=UserOutSchema)
 def create_new_user(user: UserSchema):
     return {
-        "username": user.username, # What happens if the key is 'name'?
+        # What happens if the key is 'name'?
+        "username": user.username,
         "email": user.email
     }
 ```
