@@ -96,7 +96,7 @@ Submit a resource to the server. Usually used to change state on the server, e.g
 
 #### PUT
 
-Submit a resoruce intended to replace an existing resource. 
+Submit a resoruce intended to replace an existing resource.
 
 ---
 

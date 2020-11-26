@@ -163,7 +163,7 @@ def get_listing(listing_id: int, db: Session = Depends(get_db)):
                              listing_id=listing_id)
 
 
-@api.post("/listing", 
+@api.post("/listing",
           response_model=ListingOutSchema,
           status_code=status.HTTP_201_CREATED)
 def create_listing(listing: ListingInSchema,
@@ -193,7 +193,7 @@ def update_listing(listing_id: int,
     db.commit()
     return updated_listing
 
-@api.get("/listings", 
+@api.get("/listings",
          response_model=List[ListingOutSchema])
 def get_all_listings(db: Session = Depends(get_db)):
     return get_all_listings_from_db(db)
