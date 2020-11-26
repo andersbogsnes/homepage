@@ -46,7 +46,9 @@ INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 
 ---
 
-Note how the API is defined -> method + route is mapped to a function that gets executed when the API receives a request for that combination
+Note how the API is defined
+
+A method + route is mapped to a function that gets executed when the Server receives a request for that combination
 
 ---
 
@@ -57,7 +59,7 @@ Navigate to http://127.0.0.1:8000
 
 ---
 
-Note that FastAPI handles calling the function and converting the return value to something the browser can understand
+FastAPI handles calling the function and converting the return value to something the browser can understand
 
 ---
 
@@ -79,7 +81,11 @@ Try navigating to http://127.0.0.1:8000/hello/foo
 
 The mapped endpoint now takes a named argument, which FastAPI will give us as a variable and we can use it in our function.
 
-:warning: Note that it is matched by name, so the placeholder name and the function argument name must be the same
+---
+
+:warning:
+
+FastAPI matches by name, so the placeholder name and the function argument name must be the same
 
 ---
 
@@ -135,9 +141,9 @@ How do we make a POST request?
 
 Navigate to `127.0.0.1:8000/docs`
 
-FastAPI automatically creates an OpenAPI spec for the API
+<p class="fragment">FastAPI automatically creates an OpenAPI spec for the API</p>
 
-Find the endpoint and `Try it out`
+<p class="fragment">Find the endpoint and <code>Try it out</code></p>
 
 <p class="fragment">Notice that any docstrings you include in your handler function gets included here</p>
 
@@ -145,13 +151,19 @@ Find the endpoint and `Try it out`
 
 #### Curl
 
-On the commandline we can use `curl -X POST localhost:8000/user -d '{"username": "Anders", "email": "andersbogsnes@gmail.com"}'`
+On the commandline we can use curl
+
+```bash
+curl -X POST localhost:8000/user -d '{"username": "Anders", "email": "andersbogsnes@gmail.com"}'
+```
 
 ---
 
 #### Pycharm
 
-Pycharm has a http request feature - Right-click -> New File -> HTTP Request.
+Pycharm has a http request feature
+
+Right-click -> New File -> HTTP Request.
 
 The syntax for a POST looks like this:
 
@@ -164,6 +176,9 @@ Content-Type: application/json
 
 ---
 
+Choose one and try it!
+
+---
 ### JSON
 
 Note the data payload used here is JSON format
@@ -205,17 +220,19 @@ We can return a dictionary and FastAPI will convert it to JSON and return it
 ```python
 @api.post("/user")
 def create_new(user: UserSchema):
+    # This is a python dictionary, not JSON!
     return {
         "name": user.username,
         "email": user.email
     }
 ```
 
-<p class="fragment">USince we are using pydantic, we can see what data is available on the object!</p>
+
+<p class="fragment">Since we are using pydantic, we can see what data is available on the object!</p>
 
 ---
 
-We can also define a response model to validate the outgoing data - maybe we only want the username to be returned?
+We can also define a response model to validate the outgoing data - maybe we only want the email to be returned?
 
 ```python
 class UserOutSchema(BaseModel):
@@ -229,6 +246,8 @@ def create_new_user(user: UserSchema):
         "email": user.email
     }
 ```
+
+<p class="fragment">What is the response from the API now?</p>
 
 ---
 

@@ -148,13 +148,13 @@ There are many status codes with lots of nuance, but a few you might know:
 
 # API
 
-Usually, when you work with HTTP, you're in the browser, asking for webpages.
+Most people will only use HTTP when they use a browser to navigate to a webpage
 
 ---
 
 When you navigate to google.com, your browser does a GET for the website.
 
-The Response is the text of the website HTML which your browser knows how to render.
+The Response body is the text of the website HTML which your browser knows how to render.
 
 ---
 

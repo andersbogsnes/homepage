@@ -22,7 +22,7 @@ outputs: ["Reveal"]
 API is any interface that allows us to program an application
 
 <p class="fragment">Talking to the filesystem - Filesystem API</p>
-<p class="fragment">Talking to `git` - git API</p>
+<p class="fragment">Talking to <code>git</code> - git API</p>
 <p class="fragment">Talking to a webserver - web API</p>
 
 ---

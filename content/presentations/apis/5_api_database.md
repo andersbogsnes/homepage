@@ -17,7 +17,7 @@ Now we have the basic CRUD setup, we need to hook up our handler functions to us
 
 Remember, we want our connections to be open for the duration of the request and then close it.
 
-FastAPI lets us `Depend` on a function to have run when we execute, so FastAPI can keep track of what has run
+FastAPI lets us `Depend` on a function to ensure that it will run once per request-response cycle
 
 ---
 
@@ -38,6 +38,8 @@ Change the endpoint
 def get_listing(listing_id: int, db: Session = Depends(get_db)):
     return get_listing_by_id(session=db, listing_id=listing_id)
 ```
+
+<p class="fragment">What happens when we run this?</p>
 
 ---
 
@@ -68,7 +70,7 @@ Turn the API into a full CRUD application for handling listings. Think about wha
 - Write a route for updating a listing
 - Write a route for deleting a listing
 
-Try to write a route that gets all listings
+BONUS POINTS: Try to write a route that gets all listings
 
 ---
 

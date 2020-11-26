@@ -30,6 +30,8 @@ Cache-Control: no-cache
 
 The rest of the message is passing Headers, which the server can interpret and modify it's behaviour accordingly.
 
+---
+
 Headers are simple key-value pairs passed in HTTP messages and can be found in both response and request messages
 
 ---
@@ -40,7 +42,7 @@ In FastAPI, it's simple to get header values
 from fastapi import Header
 
 @api.get("/user-agent")
-def get_user_agent(user_agent: str = Header(None)):
+def get_user_agent(user_agent: str = Header(default=None)):
     return f"Your user agent is {user_agent}"
 ```
 

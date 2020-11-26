@@ -11,9 +11,8 @@ outputs: ["Reveal"]
 
 A core component of an API is data
 
-We want to pass data back and forth to our API using JSON
-
-Data needs to be stored - generally we want a database!
+<p class="fragment">We want to pass data back and forth to our API using JSON</p>
+<p class="fragment">Data needs to be stored - generally we want a database!</p>
 
 ---
 
@@ -39,7 +38,7 @@ pip install --pre sqlalchemy # For sqlalchemy==1.4
 
 ## Declaring a Table
 
-SQLAlchemy lets us declare a Table class that represents a row in our database. To do this, SQLAlchemy needs to generate a Base class to inherit from
+SQLAlchemy lets us declare a `Table` class that represents a row in our database. To do this, SQLAlchemy needs to generate a `Base` class to inherit from
 
 ```python
 from sqlalchemy.orm import declarative_base
@@ -71,6 +70,8 @@ class Listing(Base):
 We don't need to provide an `__init__` method - SQLAlchemy autogenerates one.
 
 You can, however, add an `__init__` if you prefer
+
+SQLAlchemy will also autogenerate the `id` column when we add a new row
 
 ---
 
@@ -284,5 +285,7 @@ class Listing(Base):
 ---
 
 Given this declaration, SQLAlchemy will handle the SQL for looking up the associated rows when we do `user.listings`.
+
+As we have declared ForeignKeys, SQLAlchemy will automatically use those for the join
 
 {{% /section %}}

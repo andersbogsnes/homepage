@@ -17,14 +17,14 @@ Let's look at [DAWA's Autocomplete API](https://dawa.aws.dk/dok/api/autocomplete
 
 ---
 
-To autocomplete an address in zipcode 2720 starting with `Bog`
-To query a given address, we have to use the following URL
+To autocomplete an address in zipcode 2720 starting with `Bog` we have to use the following URL
+
 https://dawa.aws.dk/autocomplete?q=Bog&postnr=2720
 
 ---
 
 - `?` marks the beginning of the query parameters
-- `q=Bog` is now a query parameter - the text we are searching for accordin to the docs
+- `q=Bog` is now a query parameter - the text we are searching for according to the docs
 - `&` marks a new query parameter
 - `postnr=2720` passes 2720 to the query parameter `postnr`
 

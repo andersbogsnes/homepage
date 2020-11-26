@@ -34,7 +34,11 @@ The TestClient wraps the app in a `requests.Session`, so that we can use the `re
 
 When structuring the app, much like any software project, it's important to think about testing.
 
+---
+
 When building APIs, think about splitting up the functionality into separate components
+
+---
 
 - Routes for handling endpoints
 - Services for handling business logic
