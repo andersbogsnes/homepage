@@ -1,5 +1,5 @@
 ---
-title: "Det sværeste problem i machine learning"
+title: "Det Sværeste Problem i Machine Learning"
 date: 2020-07-30T17:43:06+02:00
 slug: "hardest-problem-in-ML"
 description: "Hvordan løser man det sværeste problem i Machine Learning?"
