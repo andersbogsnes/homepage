@@ -15,5 +15,4 @@ We also want to have a `listings` endpoint and a `users` endpoint.
 
 We also want to be able to see a listing's user by going to `/listing/1/user` and vice-versa `/user/1/listings` shows the users listings
 
-
 {{% /section %}}
