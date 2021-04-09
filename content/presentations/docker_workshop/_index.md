@@ -1,6 +1,6 @@
 ---
-title: "Docker"
-description: "An introduction to docker"
+title: "Docker Workshop"
+description: "A Docker Workshop for beginners"
 outputs: ["Reveal"]
 date: 2020-09-01T15:00:00+02:00
 ---
