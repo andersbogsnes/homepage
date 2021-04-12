@@ -7,9 +7,8 @@ Download relevant binary from https://github.com/gohugoio/hugo/releases
 
 **Note** Make sure to get the Hugo Extended version for SASS support
 
-## Update reveal-js plugin
+## Update reveal-js plugin and hugo-codex theme
 ```
 git submodule update --init
 git submodule foreach git pull origin master
 ```
-
