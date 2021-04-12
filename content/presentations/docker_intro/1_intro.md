@@ -9,7 +9,7 @@ outputs: ["Reveal"]
 
 ---
 
-{{< figure src=https://i.imgflip.com/24ac74.jpg >}}
+{{< figure src=/images/docker/docker_meme.jpg >}}
 
 ---
 
@@ -18,10 +18,34 @@ outputs: ["Reveal"]
 
 ---
 
-{{< figure src=https://www.docker.com/sites/default/files/d8/2018-11/container-vm-whatcontainer_2.png height=500 attr=https://www.docker.com/resources/what-container >}}
+{{< figure src=/images/docker/vm.png height=500 attr=https://www.docker.com/resources/what-container >}}
 
 ---
 
-{{< figure src=https://www.docker.com/sites/default/files/d8/2018-11/docker-containerized-appliction-blue-border_2.png height=500 attr=https://www.docker.com/resources/what-container >}}
+{{< figure src=/images/docker/container.png height=500 attr=https://www.docker.com/resources/what-container >}}
+
+---
+
+## Why use Docker?
+
+---
+
+### How we used to ship
+
+{{< figure src=/images/docker/old_shipping.jpg >}}
+
+---
+
+## The standardization
+
+{{< figure src=/images/docker/shipping_container.jpg height=500 >}}
+
+---
+
+## The present
+
+{{< figure src=/images/docker/container_ship.jpg >}}
+
+
 
 {{% /section %}}

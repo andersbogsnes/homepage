@@ -126,7 +126,7 @@ docker run -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres
 # Create a simple webpage
 echo "<h1>Hello world</h1>" >> index.html
 # Run an nginx container
-docker run -d -v $(pwd)/index.html:/usr/share/nginx/html/index.html:ro -p 8080:80 nginx
+docker run -d -v ${pwd}/index.html:/usr/share/nginx/html/index.html:ro -p 8080:80 nginx
 ```
 
 ---
