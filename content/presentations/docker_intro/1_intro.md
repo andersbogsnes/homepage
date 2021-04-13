@@ -7,6 +7,9 @@ outputs: ["Reveal"]
 
 # Docker in a nutshell
 
+{{< figure src=/images/docker/docker_logo.png class="noborder" >}}
+
+
 ---
 
 {{< figure src=/images/docker/docker_meme.jpg >}}
