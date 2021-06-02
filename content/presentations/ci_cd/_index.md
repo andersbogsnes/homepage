@@ -5,7 +5,6 @@ outputs: ["Reveal"]
 date: 2021-06-01T09:00:00+02:00
 reveal_hugo.theme: "black"
 reveal_hugo.highlight_theme: "nord"
-draft: true
 ---
 
 # CI/CD in a nutshell
